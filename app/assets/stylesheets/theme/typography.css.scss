@@ -1,0 +1,22 @@
+@include font-face("Kelson-Regular", font-files("Kelson/Kelson-Sans-Regular.otf"));
+@include font-face("Kelson-Bold", font-files("Kelson/Kelson-Sans-Bold.otf"));
+//@include font-face("Kelson-Light", font-files("Kelson/Kelson-Sans-Light.otf");
+
+body {
+  font-family: "Kelson-Regular", Arial, serif;
+}
+
+#content {
+  h1, h2, h3 {
+    font-family: "Kelson-Bold";
+    font-weight: normal;
+  }
+}
+
+// Чтобы отображался текст, стилизованный загружаемыми в данный момент шрифтами
+.wf-loading {
+  h1, h2, h3, a, p, span {
+    font-family: Arial, Serif;
+  }
+}
+

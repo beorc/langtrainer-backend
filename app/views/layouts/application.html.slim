@@ -1,0 +1,13 @@
+doctype html
+html
+  head = render 'layouts/head'
+  body class="#{body_controller_action_class} has-navbar-fixed-top has-highlighted"
+    #page
+      = render 'layouts/topbar'
+      = content_for :highlighted
+      section#content
+        .container
+          = render 'layouts/messages'
+          = yield
+      #layout-footer
+    = render 'layouts/footer'

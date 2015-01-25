@@ -1,0 +1,6 @@
+footer#footer
+  .inner
+    .container
+      span.copyright.pull-right &copy; 2013-#{Date.today.year} Yury Kotov
+      - if Rails.env.production?
+        span.social.pull-right = render 'layouts/social_likes'

@@ -31,4 +31,7 @@ config/secrets.yml
 bower.json
 *.swp
 *.swo
+tags
 config/application.yml
+
+.*DS_Store

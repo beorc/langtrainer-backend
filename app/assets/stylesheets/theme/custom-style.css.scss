@@ -1,0 +1,89 @@
+/*/////////////////////////////////////////////////////////////////////
+ //
+ // Custom theme code styles
+ // Written by Themelize.me (http://themelize.me)
+ //
+ // This is an empty starter template for overriding styles
+ // set by Bootstrap & the theme
+ //
+ // ----------------------------------------------------
+ //
+ // Remove unused code for better performances
+ //
+ // ----------------------------------------------------
+ //
+ // @see - Usefuls tools online for editing
+ // 1. http://charliepark.org/bootstrap_buttons/ - Button style generator
+ // 2. http://www.colorzilla.com/gradient-editor/ - CSS3 gradient maker
+ //
+ // @note
+ // To ensure custom styles are picked up
+ // wrap definitions in body tag
+ // ie.
+ // body .navbar-inner {
+ //   background: #ff0000;
+ // }
+ //
+ /////////////////////////////////////////////////////////////////////*/
+/*
+ * --------------------------------------------------
+ * 1. General Elements
+ *--------------------------------------------------
+ */
+#navigation {
+  /* 1. Navigation wrapper */
+  .navbar-brand {
+    margin: 15px 0px;
+  }
+}
+#highlighted {
+  /* 2. Highlighted (below header) wrapper */
+  background: #f2f2f2 url(bg_noise-5.png) left top repeat;
+}
+#content {
+  /* 3. Content wrapper */
+}
+#content-below {
+  /* 4. Content Below wrapper */
+}
+#footer {
+  /* 5. Footer wrapper */
+  .inner {
+    background: url(bg_noise-5.png) left top repeat;
+    height: 100%;
+  }
+  height: $footerHeight;
+  min-height: $footerHeight;
+}
+
+.inner {
+  background: url(bg_noise-5.png) left top repeat;
+}
+/*
+ * --------------------------------------------------
+ * 2. Colours
+ *--------------------------------------------------
+ */
+/*
+ * --------------------------------------------------
+ * 3. Responsiveness/media queries
+ *--------------------------------------------------
+ */
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+@media (min-width: 768px) {
+  /* Small devices (tablets, 768px and up) */
+}
+@media (min-width: 992px) {
+  /* Medium devices (desktops, 992px and up) */
+}
+@media (min-width: 1200px) {
+  /* Large devices (large desktops, 1200px and up) */
+}
+/* Navbar collapse */
+/*
+ * --------------------------------------------------
+ * 4. Misc
+ * Other stuff
+ *--------------------------------------------------
+ */

@@ -10,6 +10,17 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
  */
+
+ @import 'compass';
+ @import 'compass/layout';
+ @import "bootstrap";
+ @import "font-awesome";
+
+ @import "theme/definitions";
+ @import "theme/sticky_footer";
+ @import "theme/theme-style";
+ @import "theme/colour-green";
+ @import "theme/custom-style";
+ @import "theme/typography";

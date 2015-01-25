@@ -1,0 +1,5 @@
+- flash.each do |type, message|
+  div[class="alert #{bootstrap_class_for(type.to_sym)} fade in" data-dismiss='alert']
+    = link_to 'javascript:void(0)', class: 'close', data: { dismiss: 'alert' } do
+      '&times;
+    = message
