@@ -33,5 +33,6 @@ bower.json
 *.swo
 tags
 config/application.yml
+._*
 
 .*DS_Store
