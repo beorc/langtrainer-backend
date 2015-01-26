@@ -33,6 +33,8 @@ gem 'jquery-rails'
 
 gem 'rollbar', '~> 1.3.1'
 gem 'meta-tags', require: 'meta_tags'
+gem 'styx'
+gem 'langtrainer_frontend_backbone', github: 'beorc/langtrainer_frontend_backbone', branch: 'master'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
