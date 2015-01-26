@@ -38,7 +38,7 @@
 }
 #highlighted {
   /* 2. Highlighted (below header) wrapper */
-  background: #f2f2f2 url(bg_noise-5.png) left top repeat;
+  background: #f2f2f2 asset_url('bg_noise-5.png') left top repeat;
 }
 #content {
   /* 3. Content wrapper */
@@ -49,7 +49,7 @@
 #footer {
   /* 5. Footer wrapper */
   .inner {
-    background: url(bg_noise-5.png) left top repeat;
+    background: asset_url('bg_noise-5.png') left top repeat;
     height: 100%;
   }
   height: $footerHeight;
@@ -57,7 +57,7 @@
 }
 
 .inner {
-  background: url(bg_noise-5.png) left top repeat;
+  background: asset_url('bg_noise-5.png') left top repeat;
 }
 /*
  * --------------------------------------------------
