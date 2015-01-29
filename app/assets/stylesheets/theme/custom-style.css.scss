@@ -35,10 +35,18 @@
   .navbar-brand {
     margin: 15px 0px;
   }
+
+  .inner {
+    background: asset_url('bg_noise-5.png') left top repeat;
+  }
 }
 #highlighted {
   /* 2. Highlighted (below header) wrapper */
   background: #f2f2f2 asset_url('bg_noise-5.png') left top repeat;
+  & > .container {
+    margin: 0px auto;
+    width: 1040px;
+  }
 }
 #content {
   /* 3. Content wrapper */
@@ -58,9 +66,6 @@
   min-height: $footerHeight;
 }
 
-.inner {
-  background: asset_url('bg_noise-5.png') left top repeat;
-}
 /*
  * --------------------------------------------------
  * 2. Colours
