@@ -1,9 +1,7 @@
 @Styx.Initializers.Trainings =
   show: (data) ->
     $ ->
-      success = ->
-        world = Langtrainer.LangtrainerApp.world
-
+      success = (world) ->
         coursesCollection = world.get('coursesCollection')
         courseSelector = new Langtrainer.LangtrainerApp.Views.CourseSelector(
           collection: coursesCollection
