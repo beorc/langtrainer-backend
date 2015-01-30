@@ -24,6 +24,7 @@
         nativeLanguageSelector = new Langtrainer.LangtrainerApp.Views.LanguageSelector(
           collection: nativeLanguagesCollection
           model: world.get('nativeLanguage')
+          label: 'Native language'
         )
         nativeLanguageSelector
           .render()
@@ -33,6 +34,7 @@
         languageSelector = new Langtrainer.LangtrainerApp.Views.LanguageSelector(
           collection: languagesCollection
           model: world.get('language')
+          label: 'Language'
         )
         languageSelector
           .render()

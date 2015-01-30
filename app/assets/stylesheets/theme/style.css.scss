@@ -1,4 +1,13 @@
 #highlighted > .container {
   padding: 10px 0;
+
 }
 
+span.label {
+  font-family: Arial;
+  font-weight: normal;
+
+  &.label-success {
+    background-color: rgb(129, 153, 77);
+  }
+}
