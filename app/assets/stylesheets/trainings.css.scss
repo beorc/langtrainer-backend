@@ -13,12 +13,20 @@ span.label {
   display: none;
 }
 
+.panel-heading {
+  ul {
+    margin-bottom: 0px;
+  }
+}
+
+.panel-body.lt-area {
+  padding: 6px;
+}
+
 .lt-area {
-  border: 1px solid #ccc;
-  border-radius: 3px 3px 0 0;
   height: 200px;
 
-  textarea {
+  .lt-question, .lt-answer {
     resize: none;
     cursor: text;
     width: 100%;

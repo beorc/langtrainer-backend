@@ -40,7 +40,7 @@
           .render()
           .$el.appendTo('.language-selector-container')
 
-        stepView = new Langtrainer.LangtrainerApp.Views.StepView
+        stepView = new Langtrainer.LangtrainerApp.Views.StepView(model: world.get('step'))
         stepView
           .render()
           .$el.appendTo('#content')
