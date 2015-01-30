@@ -11,7 +11,7 @@
           .render()
           .$el.appendTo('.course-selector-container')
 
-        unitsCollection = world.get('course').get('unitsCollection')
+        unitsCollection = world.get('unitsCollection')
         unitSelector = new Langtrainer.LangtrainerApp.Views.UnitSelector(
           collection: unitsCollection
           model: world.get('unit')
