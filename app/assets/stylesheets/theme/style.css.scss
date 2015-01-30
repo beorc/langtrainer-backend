@@ -1,6 +1,5 @@
 #highlighted > .container {
   padding: 10px 0;
-
 }
 
 span.label {
@@ -8,6 +7,14 @@ span.label {
   font-weight: normal;
 
   &.label-success {
-    background-color: rgb(129, 153, 77);
+    margin-right: 10px;
+    color: $textColor;
+    background-color: inherit;
+    border-width: 1px;
+    border-color: $textColor;
   }
+}
+
+.dropdown-menu.selectpicker span.label {
+  display: none;
 }
