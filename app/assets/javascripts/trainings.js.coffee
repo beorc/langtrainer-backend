@@ -40,6 +40,11 @@
           .render()
           .$el.appendTo('.language-selector-container')
 
+        stepView = new Langtrainer.LangtrainerApp.Views.StepView
+        stepView
+          .render()
+          .$el.appendTo('#content')
+
       error = ->
         alert('Something went wrong')
 

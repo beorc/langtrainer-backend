@@ -1,0 +1,44 @@
+span.label {
+  font-family: Arial, sans-serif;
+  font-weight: normal;
+
+  &.label-success {
+    margin-right: 10px;
+    color: $textColor;
+    background-color: inherit;
+  }
+}
+
+.dropdown-menu.selectpicker span.label {
+  display: none;
+}
+
+.lt-area {
+  border: 1px solid #ccc;
+  border-radius: 3px 3px 0 0;
+  height: 200px;
+
+  textarea {
+    resize: none;
+    cursor: text;
+    width: 100%;
+    height: 100%;
+    background: none repeat scroll 0% 0% transparent;
+
+    border: 0px none;
+    outline: 0px none;
+    font-family: Arial, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    font-size: 14px;
+    line-height: 18px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    color: #222;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    letter-spacing: normal;
+    word-spacing: normal;
+  }
+}

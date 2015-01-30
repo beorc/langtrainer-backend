@@ -1,20 +1,3 @@
 #highlighted > .container {
   padding: 10px 0;
 }
-
-span.label {
-  font-family: Arial;
-  font-weight: normal;
-
-  &.label-success {
-    margin-right: 10px;
-    color: $textColor;
-    background-color: inherit;
-    border-width: 1px;
-    border-color: $textColor;
-  }
-}
-
-.dropdown-menu.selectpicker span.label {
-  display: none;
-}
