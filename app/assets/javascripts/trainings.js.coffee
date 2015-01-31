@@ -45,6 +45,13 @@
           .render()
           .$el.appendTo('#content')
 
+        $('[data-toggle="tooltip"]').each ->
+          options = {}
+          placement = $(@).data('placement')
+          options.placement = placement if placement
+
+          $(@).tooltip(options)
+
       error = ->
         alert('Something went wrong')
 

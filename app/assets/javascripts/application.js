@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require styx
+//= require bootstrap/tooltip
 //= require langtrainer_frontend_backbone
 //= require_tree .
 //
