@@ -19,26 +19,35 @@ span.label {
   display: none;
 }
 
-.panel-heading {
-  ul {
-    margin-bottom: 0px;
-    display: inline-block;
-  }
+.panel {
+  margin-bottom: 0px;
 
-  .lt-indicators {
-    float: right;
-    .lt-wrong-answer {
-      display: none;
+  .panel-heading {
+    ul {
+      margin-bottom: 0px;
+      display: inline-block;
+    }
 
-      i {
-        color: red;
+    .lt-indicators {
+      float: right;
+      .lt-wrong-answer {
+        display: none;
+
+        i {
+          color: red;
+        }
       }
     }
   }
-}
 
-.panel-body.lt-area {
-  padding: 6px;
+  .panel-body.lt-area {
+    padding: 6px;
+  }
+
+  &.with-notification {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
 }
 
 .lt-area {
