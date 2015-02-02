@@ -1,3 +1,12 @@
 #highlighted > .container {
   padding: 10px 0;
 }
+
+body a, a:active, a:focus, a:hover {
+  &.disabled {
+    & .fa {
+      color: gray;
+    }
+    color: gray;
+  }
+}

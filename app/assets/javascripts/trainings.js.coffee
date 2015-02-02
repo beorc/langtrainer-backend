@@ -41,9 +41,8 @@
           .$el.appendTo('.language-selector-container')
 
         stepView = new Langtrainer.LangtrainerApp.Views.StepView(model: world.get('step'))
-        stepView
-          .render()
-          .$el.appendTo('#content')
+        stepView.$el.appendTo('#content')
+        stepView.render()
 
         $('[data-toggle="tooltip"]').each ->
           options = {}
@@ -53,6 +52,6 @@
           $(@).tooltip(options)
 
       error = ->
-        alert('Something went wrong')
+        alert('Opps... Something went wrong!')
 
       Langtrainer.LangtrainerApp.run(data, success, error)

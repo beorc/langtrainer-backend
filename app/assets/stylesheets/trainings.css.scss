@@ -1,3 +1,8 @@
+.fa-stack {
+  height: 1em;
+  width: 1em;
+}
+
 i.fa {
   font-size: 1.33333333em;
   line-height: 0.75em;
@@ -42,11 +47,6 @@ span.label {
 
   .panel-body.lt-area {
     padding: 6px;
-  }
-
-  &.with-notification {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
   }
 }
 

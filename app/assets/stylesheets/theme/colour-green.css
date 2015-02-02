@@ -41,6 +41,9 @@ body a:hover {
   color: #64773c;
   text-decoration: underline;
 }
+body a:active, a:focus {
+  color: #64773c;
+}
 body .primary-colour {
   color: #81994d;
 }
