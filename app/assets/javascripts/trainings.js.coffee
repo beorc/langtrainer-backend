@@ -51,7 +51,18 @@
 
           $(@).tooltip(options)
 
+        initYandexMetrika = (w, c) ->
+          if data.yaMetrikaId
+            (w[c] = w[c] || []).push () ->
+              try
+                w[data.yaMetrikaId] = new Ya.Metrika { id: data.yaMetrikaId, enableAll: true, trackHash: true, webvisor: true, trackLinks: true }
+              catch error
+            $.getScript 'http://mc.yandex.ru/metrika/watch.js'
+
+        initYandexMetrika(window, 'yandex_metrika_callbacks')
+
       error = ->
         alert('Opps... Something went wrong!')
 
       Langtrainer.LangtrainerApp.run(data, success, error)
+
