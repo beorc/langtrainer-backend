@@ -1,3 +1,57 @@
+window.Langtrainer.initYandexMetrika = (id, w, c) ->
+  if id
+    (w[c] = w[c] || []).push () ->
+      try
+        w[id] = new Ya.Metrika { id: id, enableAll: true, trackHash: true, webvisor: true, trackLinks: true }
+      catch error
+    $.getScript 'http://mc.yandex.ru/metrika/watch.js'
+
+window.Langtrainer.initYandexShare = ->
+  $.getScript "//yandex.st/share/share.js", () ->
+    # Конструирование текста, который будет вставлен в тело lj-поста
+    ljDescription = () ->
+      container = $('<p></p>')
+
+      aTag = $("<a></a>").attr('href', window.location.href)
+      footLink = aTag.clone().
+        text($('title').text()).
+        wrap('<p>').parent()
+
+      description = $('.lj-description p:first').clone()
+      if description.length == 0
+        text = $('meta[name="description"]').attr('content')
+        description = $("<p>#{text}</p>")
+      if description
+        container.append(description)
+
+      container.append(footLink)
+
+      imgUrl = $('.lj-image').attr 'src'
+      if imgUrl && imgUrl.length > 0
+        imgContainer = aTag.clone()
+        $('<img></img>').
+          attr('src', imgUrl).
+          attr('title', $('title')).
+          appendTo imgContainer
+        container.prepend imgContainer
+
+      container.html()
+
+    options =
+      element: 'yashare'
+      l10n: Langtrainer.LangtrainerApp.currentUser.getCurrentNativeLanguage().get('slug')
+      elementStyle:
+        type: 'button'
+        quickServices: ['twitter', 'facebook', 'vkontakte', 'odnoklassniki']
+      title: 'Share',
+      image: $('meta[property="og:image"]').attr('content'),
+      description: $('meta[name="description"]').attr('content'),
+      serviceSpecific:
+        lj:
+          description: ljDescription()
+
+    new Ya.share options
+
 @Styx.Initializers.Trainings =
   show: (data) ->
     $ ->
@@ -51,15 +105,8 @@
 
           $(@).tooltip(options)
 
-        initYandexMetrika = (w, c) ->
-          if data.yaMetrikaId
-            (w[c] = w[c] || []).push () ->
-              try
-                w[data.yaMetrikaId] = new Ya.Metrika { id: data.yaMetrikaId, enableAll: true, trackHash: true, webvisor: true, trackLinks: true }
-              catch error
-            $.getScript 'http://mc.yandex.ru/metrika/watch.js'
-
-        initYandexMetrika(window, 'yandex_metrika_callbacks')
+        Langtrainer.initYandexMetrika(data.yaMetrikaId, window, 'yandex_metrika_callbacks')
+        Langtrainer.initYandexShare()
 
       error = ->
         alert('Opps... Something went wrong!')
