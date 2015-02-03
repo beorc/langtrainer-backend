@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
-  delete 'sign_out' => 'user_sessions#destroy', as: 'sign_out'
-  get 'sign_in' => 'user_sessions#new', as: 'sign_in'
+  delete 'sign_out' => 'api/users/sessions#destroy', as: 'sign_out'
 
-  resources :user_sessions, only: :create
-  resources :users, only: :create
+  namespace :api, defaults: { format: :json } do
+    namespace :users do
+      resource :session, only: :create
+      resource :registration, only: :create
+    end
+  end
 
   root 'trainings#show'
 end
