@@ -5,5 +5,11 @@ class User < ActiveRecord::Base
   validates :password, confirmation: true
   validates :password_confirmation, presence: true
 
-  validates :email, uniqueness: true
+  validates :email, presence: true, uniqueness: true
+
+  def to_builder
+    Jbuilder.new do |user|
+      user.(self, :id, :email)
+    end
+  end
 end

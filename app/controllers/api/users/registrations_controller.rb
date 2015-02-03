@@ -3,7 +3,8 @@ class Api::Users::RegistrationsController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      render json: @user, status: :created
+      auto_login(@user)
+      render json: @user.to_builder.target!, status: :created
     else
       render json: { errors: @user.errors }, status: :unprocessable_entity
     end
@@ -12,6 +13,6 @@ class Api::Users::RegistrationsController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation)
+    params.require(:registration).permit(:email, :password, :password_confirmation)
   end
 end

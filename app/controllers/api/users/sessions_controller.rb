@@ -1,10 +1,14 @@
 class Api::Users::SessionsController < ApplicationController
   def create
-    user = login(params[:email], params[:password])
-    if user
-      render json: user, status: :created
+    @session = User::Session.new(self)
+    @session.email = params[:email]
+    @session.password = params[:password]
+    @session.save
+
+    if @session.valid?
+      render json: @session.user, status: :created
     else
-      render json: { errors: user.errors }, status: :unprocessable_entity
+      render json: { errors: @session.errors }, status: :unprocessable_entity
     end
   end
 
