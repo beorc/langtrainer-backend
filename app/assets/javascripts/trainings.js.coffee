@@ -98,6 +98,10 @@ window.Langtrainer.initYandexShare = ->
         stepView.$el.appendTo('#content')
         stepView.render()
 
+        navbarControl = new Langtrainer.LangtrainerApp.Views.NavbarControl
+        navbarControl.$el.appendTo('#lt-nav-control-container')
+        navbarControl.render()
+
         $('[data-toggle="tooltip"]').each ->
           options = {}
           placement = $(@).data('placement')

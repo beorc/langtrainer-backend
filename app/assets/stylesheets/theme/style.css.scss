@@ -1,3 +1,7 @@
+input, textarea {
+  font-family: Arial, sans-serif;
+}
+
 #highlighted > .container {
   padding: 10px 0;
 }
@@ -13,4 +17,9 @@ body a, a:active, a:focus, a:hover {
 
 #yashare {
   margin-top: -5px;
+}
+
+.navbar-right {
+  float: right;
+  margin: 20px 0 0 0;
 }
