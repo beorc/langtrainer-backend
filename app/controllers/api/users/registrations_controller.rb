@@ -4,7 +4,7 @@ class Api::Users::RegistrationsController < ApplicationController
 
     if @user.save
       auto_login(@user)
-      render json: @user.to_builder.target!, status: :created
+      render json: @user.to_json, status: :created
     else
       render json: { errors: @user.errors }, status: :unprocessable_entity
     end
