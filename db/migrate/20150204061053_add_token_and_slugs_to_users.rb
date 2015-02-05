@@ -4,6 +4,6 @@ class AddTokenAndSlugsToUsers < ActiveRecord::Migration
     add_column :users, :current_course_slug, :string
     add_column :users, :language_slug, :string
     add_column :users, :native_language_slug, :string
-    add_column :users, :question_help_enabled, :string
+    add_column :users, :question_help_enabled, :boolean, default: true
   end
 end

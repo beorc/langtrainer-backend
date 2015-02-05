@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20150204061053) do
   enable_extension "plpgsql"
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                 null: false
+    t.string   "email",                                null: false
     t.string   "crypted_password"
     t.string   "salt"
     t.datetime "created_at"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20150204061053) do
     t.string   "current_course_slug"
     t.string   "language_slug"
     t.string   "native_language_slug"
-    t.string   "question_help_enabled"
+    t.boolean  "question_help_enabled", default: true
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
   validates :email, presence: true, uniqueness: true
 
-  def to_json
-    super(only: [:id, :email])
+  def as_json(options = {})
+    super(except: [:crypted_password, :salt, :created_at, :updated_at])
   end
 end

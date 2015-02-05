@@ -5,9 +5,8 @@ class TrainingsController < ApplicationController
       yaMetrikaId: ENV['YA_METRIKA_ID']
     }
 
-    if logged_in?
-      options[:currentUser] = current_user.to_json
-    end
+    options[:currentUser] = logged_in? ? current_user.as_json : {}
+    options[:currentUser].merge! csrf_options
 
     styx_initialize_with(options)
   end

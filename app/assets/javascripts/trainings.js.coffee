@@ -55,65 +55,77 @@ window.Langtrainer.initYandexShare = ->
 @Styx.Initializers.Trainings =
   show: (data) ->
     $ ->
+      courseSelector = null
+      unitSelector = null
+      nativeLanguageSelector = null
+      languageSelector = null
+      stepView = null
+      navbarControl = null
+
       success = (world) ->
         coursesCollection = world.get('coursesCollection')
-        courseSelector = new Langtrainer.LangtrainerApp.Views.CourseSelector(
+        courseSelector ?= new Langtrainer.LangtrainerApp.Views.CourseSelector(
           collection: coursesCollection
           model: world.get('course')
         )
+        courseSelectorContainer = $('.course-selector-container')
         courseSelector
           .render()
-          .$el.appendTo('.course-selector-container')
+          .$el.detach().appendTo(courseSelectorContainer)
 
         unitsCollection = world.get('unitsCollection')
-        unitSelector = new Langtrainer.LangtrainerApp.Views.UnitSelector(
+        unitSelector ?= new Langtrainer.LangtrainerApp.Views.UnitSelector(
           collection: unitsCollection
           model: world.get('unit')
         )
+        unitSelectorContainer = $('.unit-selector-container')
         unitSelector
           .render()
-          .$el.appendTo('.unit-selector-container')
+          .$el.detach().appendTo(unitSelectorContainer)
 
         nativeLanguagesCollection = world.get('nativeLanguagesCollection')
-        nativeLanguageSelector = new Langtrainer.LangtrainerApp.Views.LanguageSelector(
+        nativeLanguageSelector ?= new Langtrainer.LangtrainerApp.Views.LanguageSelector(
           collection: nativeLanguagesCollection
           model: world.get('nativeLanguage')
           label: 'Native language'
         )
+        nativeLanguageSelectorContainer = $('.native-language-selector-container')
         nativeLanguageSelector
           .render()
-          .$el.appendTo('.native-language-selector-container')
+          .$el.detach().appendTo(nativeLanguageSelectorContainer)
 
         languagesCollection = world.get('languagesCollection')
-        languageSelector = new Langtrainer.LangtrainerApp.Views.LanguageSelector(
+        languageSelector ?= new Langtrainer.LangtrainerApp.Views.LanguageSelector(
           collection: languagesCollection
           model: world.get('language')
           label: 'Language'
         )
+        languageSelectorContainer = $('.language-selector-container')
         languageSelector
           .render()
-          .$el.appendTo('.language-selector-container')
+          .$el.detach().appendTo(languageSelectorContainer)
 
-        stepView = new Langtrainer.LangtrainerApp.Views.StepView(model: world.get('step'))
-        stepView.$el.appendTo('#content')
+        stepView ?= new Langtrainer.LangtrainerApp.Views.StepView(model: world.get('step'))
+        stepViewContainer = $('#content')
+        stepView.$el.detach().appendTo(stepViewContainer)
         stepView.render()
 
-        navbarControl = new Langtrainer.LangtrainerApp.Views.NavbarControl
-        navbarControl.$el.appendTo('#lt-nav-control-container')
+        navbarControl ?= new Langtrainer.LangtrainerApp.Views.NavbarControl
+        navbarControlContainer = $('#lt-nav-control-container')
+        navbarControl.$el.detach().appendTo(navbarControlContainer)
         navbarControl.render()
-
-        $('[data-toggle="tooltip"]').each ->
-          options = {}
-          placement = $(@).data('placement')
-          options.placement = placement if placement
-
-          $(@).tooltip(options)
-
-        Langtrainer.initYandexMetrika(data.yaMetrikaId, window, 'yandex_metrika_callbacks')
-        Langtrainer.initYandexShare()
 
       error = ->
         alert('Opps... Something went wrong!')
 
       Langtrainer.LangtrainerApp.run(data, success, error)
 
+      $('[data-toggle="tooltip"]').each ->
+        options = {}
+        placement = $(@).data('placement')
+        options.placement = placement if placement
+
+        $(@).tooltip(options)
+
+      Langtrainer.initYandexMetrika(data.yaMetrikaId, window, 'yandex_metrika_callbacks')
+      Langtrainer.initYandexShare()

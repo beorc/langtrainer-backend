@@ -6,7 +6,7 @@ class Api::Users::SessionsController < ApplicationController
     @session.save
 
     if @session.valid?
-      render json: @session.user, status: :created
+      render json: { user: @session.user.as_json.merge(csrf_options) }, status: :created
     else
       render json: { errors: @session.errors }, status: :unprocessable_entity
     end
@@ -14,6 +14,6 @@ class Api::Users::SessionsController < ApplicationController
 
   def destroy
     logout
-    render json: {}
+    render json: { user: csrf_options }
   end
 end
