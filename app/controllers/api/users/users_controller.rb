@@ -3,7 +3,7 @@ class Api::Users::UsersController < ApplicationController
     user = current_user
 
     if user.update(user_params)
-      render json: user.to_json
+      render json: user
     else
       render json: { errors: user.errors }, status: :unprocessable_entity
     end
