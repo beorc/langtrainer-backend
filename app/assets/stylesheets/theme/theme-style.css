@@ -151,6 +151,7 @@ a:focus {
   background-color: #2a6082;
   *background-color: #24516e;
   background-image: none;
+  border-color: white;
 }
 .btn-primary:active,
 .btn-primary.active {
