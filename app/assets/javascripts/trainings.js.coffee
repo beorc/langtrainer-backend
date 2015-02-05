@@ -8,47 +8,14 @@ window.Langtrainer.initYandexMetrika = (id, w, c) ->
 
 window.Langtrainer.initYandexShare = ->
   $.getScript "//yandex.st/share/share.js", () ->
-    # Конструирование текста, который будет вставлен в тело lj-поста
-    ljDescription = () ->
-      container = $('<p></p>')
-
-      aTag = $("<a></a>").attr('href', window.location.href)
-      footLink = aTag.clone().
-        text($('title').text()).
-        wrap('<p>').parent()
-
-      description = $('.lj-description p:first').clone()
-      if description.length == 0
-        text = $('meta[name="description"]').attr('content')
-        description = $("<p>#{text}</p>")
-      if description
-        container.append(description)
-
-      container.append(footLink)
-
-      imgUrl = $('.lj-image').attr 'src'
-      if imgUrl && imgUrl.length > 0
-        imgContainer = aTag.clone()
-        $('<img></img>').
-          attr('src', imgUrl).
-          attr('title', $('title')).
-          appendTo imgContainer
-        container.prepend imgContainer
-
-      container.html()
-
     options =
       element: 'yashare'
-      l10n: Langtrainer.LangtrainerApp.currentUser.getCurrentNativeLanguage().get('slug')
+      link: 'http://training.langtrainer.com'
+      l10n: 'en'
       elementStyle:
         type: 'button'
         quickServices: ['twitter', 'facebook', 'vkontakte', 'odnoklassniki']
-      title: 'Share',
-      image: $('meta[property="og:image"]').attr('content'),
-      description: $('meta[name="description"]').attr('content'),
-      serviceSpecific:
-        lj:
-          description: ljDescription()
+      description: $('meta[name="description"]').attr('content')
 
     new Ya.share options
 
