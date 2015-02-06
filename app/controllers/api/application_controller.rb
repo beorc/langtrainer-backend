@@ -1,5 +1,4 @@
 class Api::ApplicationController < ApplicationController
-  ALLOWED_SITES = [ENV['AUTH_API_ENDPOINT']]
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception, except: :handle_options_request

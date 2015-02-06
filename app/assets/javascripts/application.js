@@ -33,3 +33,6 @@ WebFontConfig = {
     var s = document.getElementsByTagName('script')[0];
     s.parentNode.insertBefore(wf, s);
 })();
+
+$(document).on 'click', '.lt-feedback', (ev) ->
+    Langtrainer.LangtrainerApp.navigateToFeedback()
