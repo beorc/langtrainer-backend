@@ -5,6 +5,9 @@
         .container
           .navbar-header
             = link_to root_path, class: 'navbar-brand', title: t(:home) do
-              h1 = t(:app_name)
+              h1
+                = t(:app_name)
               span = t(:app_description)
+          span.lt-loading-indicator
+            i.fa.fa-cog.fa-spin
           .navbar-right#lt-nav-control-container
