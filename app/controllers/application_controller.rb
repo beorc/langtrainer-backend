@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   end
 
   def handle_options_request
-    head(:ok) if request.request_method == 'OPTIONS'
+    head(:no_content) if request.request_method == 'OPTIONS'
   end
 
   private
