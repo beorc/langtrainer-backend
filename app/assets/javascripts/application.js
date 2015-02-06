@@ -34,5 +34,6 @@ WebFontConfig = {
     s.parentNode.insertBefore(wf, s);
 })();
 
-$(document).on 'click', '.lt-feedback', (ev) ->
-    Langtrainer.LangtrainerApp.navigateToFeedback()
+$(document).on('click', '.lt-feedback', function (ev) {
+    Langtrainer.LangtrainerApp.navigateToFeedback();
+})

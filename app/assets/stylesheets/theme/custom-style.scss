@@ -61,7 +61,13 @@
 }
 #footer {
   /* 5. Footer wrapper */
+
   .inner {
+    & > .container {
+      margin: 0px auto;
+      width: 1040px;
+    }
+
     background: asset_url('bg_noise-5.png') left top repeat;
     height: 100%;
   }
