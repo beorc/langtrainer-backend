@@ -1,4 +1,4 @@
-class Api::Users::SessionsController < ApplicationController
+class Api::Users::SessionsController < Api::ApplicationController
   def create
     @session = User::Session.new(self)
     @session.email = params[:email]

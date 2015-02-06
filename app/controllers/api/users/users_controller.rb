@@ -1,4 +1,4 @@
-class Api::Users::UsersController < ApplicationController
+class Api::Users::UsersController < Api::ApplicationController
   def update
     user = current_user
 
