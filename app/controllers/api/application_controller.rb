@@ -16,7 +16,6 @@ class Api::ApplicationController < ApplicationController
     headers['Access-Control-Request-Method'] = '*'
     headers['Access-Control-Allow-Headers'] = '*'
     headers['Access-Control-Allow-Methods'] = '*'
-    headers['Access-Control-Allow-Headers'] = 'Origin, Content-Type, X-Requested-With, X-Prototype-Version, X-CSRF-Token'
     headers['Access-Control-Max-Age'] = '1728000'
     headers['X-Frame-Options'] = 'GOFORIT'
   end
