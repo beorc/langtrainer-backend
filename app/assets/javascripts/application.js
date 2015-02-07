@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require styx
 //= require bootstrap/tooltip
+//= require bootstrap/popover
 //= require langtrainer_frontend_backbone
 //= require_tree .
 //

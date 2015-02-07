@@ -82,17 +82,17 @@ window.Langtrainer.initYandexShare = ->
         navbarControl.$el.detach().appendTo(navbarControlContainer)
         navbarControl.render()
 
+        $('[data-toggle="tooltip"]').each ->
+          options = {}
+          placement = $(@).data('placement')
+          options.placement = placement if placement
+
+          $(@).tooltip(options)
+
       error = ->
         alert('Opps... Something went wrong!')
 
       Langtrainer.LangtrainerApp.run(data, success, error)
-
-      $('[data-toggle="tooltip"]').each ->
-        options = {}
-        placement = $(@).data('placement')
-        options.placement = placement if placement
-
-        $(@).tooltip(options)
 
       Langtrainer.initYandexMetrika(data.yaMetrikaId, window, 'yandex_metrika_callbacks')
       Langtrainer.initYandexShare()
