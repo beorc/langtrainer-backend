@@ -18,4 +18,10 @@ class Api::ApplicationController < ApplicationController
     headers['Access-Control-Max-Age'] = '1728000'
     headers['X-Frame-Options'] = 'GOFORIT'
   end
+
+  def set_csrf_headers
+    # Add the newly created csrf token to the page headers
+    response.headers['X-CSRF-Token'] = "#{form_authenticity_token}"
+    response.headers['X-CSRF-Param'] = "#{request_forgery_protection_token}"
+  end
 end

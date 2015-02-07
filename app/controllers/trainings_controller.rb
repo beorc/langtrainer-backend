@@ -7,7 +7,6 @@ class TrainingsController < ApplicationController
     }
 
     options[:currentUser] = logged_in? ? current_user.as_json : {}
-    options[:currentUser].merge! csrf_options
 
     styx_initialize_with(options)
   end
