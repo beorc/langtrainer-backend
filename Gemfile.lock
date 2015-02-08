@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/beorc/langtrainer_frontend_backbone.git
-  revision: cb5b5f993828070ef92dd8363f9a12c863efeb19
+  revision: ccbca9a90f04db6314ca4d16fc8cc94d21faea60
   branch: master
   specs:
     langtrainer_frontend_backbone (0.0.1)
@@ -56,7 +56,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.3.6)
     arel (6.0.0)
-    autoprefixer-rails (5.1.4)
+    autoprefixer-rails (5.1.5)
       execjs
       json
     bcrypt (3.1.9)
