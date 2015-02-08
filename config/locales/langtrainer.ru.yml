@@ -1,0 +1,31 @@
+ru:
+  langtrainer:
+    sign_in: Войти
+    sign_up: Регистрация
+    sign_out: Выйти
+
+    error: Ой... Что-то пошло не так!
+
+    step_view:
+      check_answer: Проверить ответ
+      next_step: Следующий шаг
+      show_next_word: Подсказать следующее слово
+      show_right_answer: Показать правильный ответ
+      popover:
+        sign_up: Пожалуйста, <a href='/#sign_up'>зарегистрируйтесь</a>, если вы хотите сохранить ваш прогресс и оптимизировать процесс обучения специально для вас.
+        answer: Ответ
+        right_answer: Правильный ответ!
+        wrong_answer: Неправильный ответ. Попробуйте еще раз!
+        hotkey:
+          check: В следующий раз нажмите клавишу Ввод (Enter) для проверки перевода
+      question:
+        toggle_help: Отображать подсказку
+      answer:
+        placeholder: Введите перевод
+        wrong_hint: Похоже, в вашем переводе есть ошибка
+
+    label:
+      native_language: Родной язык
+      language: Изучаемый язык
+      course: Курс
+      unit: Раздел

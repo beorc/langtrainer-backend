@@ -19,6 +19,14 @@ window.Langtrainer.initYandexShare = ->
 
     new Ya.share options
 
+window.Langtrainer.initView = ->
+  $('[data-toggle="tooltip"]').each ->
+    options = {}
+    placement = $(@).data('placement')
+    options.placement = placement if placement
+
+    $(@).tooltip(options)
+
 @Styx.Initializers.Trainings =
   show: (data) ->
     $ ->
@@ -54,7 +62,7 @@ window.Langtrainer.initYandexShare = ->
         nativeLanguageSelector ?= new Langtrainer.LangtrainerApp.Views.LanguageSelector(
           collection: nativeLanguagesCollection
           model: world.get('nativeLanguage')
-          label: 'Native language'
+          label: 'native_language'
         )
         nativeLanguageSelectorContainer = $('.native-language-selector-container')
         nativeLanguageSelector
@@ -65,7 +73,7 @@ window.Langtrainer.initYandexShare = ->
         languageSelector ?= new Langtrainer.LangtrainerApp.Views.LanguageSelector(
           collection: languagesCollection
           model: world.get('language')
-          label: 'Language'
+          label: 'language'
         )
         languageSelectorContainer = $('.language-selector-container')
         languageSelector
@@ -82,12 +90,8 @@ window.Langtrainer.initYandexShare = ->
         navbarControl.$el.detach().appendTo(navbarControlContainer)
         navbarControl.render()
 
-        $('[data-toggle="tooltip"]').each ->
-          options = {}
-          placement = $(@).data('placement')
-          options.placement = placement if placement
-
-          $(@).tooltip(options)
+        Langtrainer.initView()
+        Langtrainer.LangtrainerApp.globalBus.on 'localeChanged', Langtrainer.initView, @
 
       error = ->
         alert('Opps... Something went wrong!')

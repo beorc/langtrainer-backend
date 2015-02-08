@@ -1,0 +1,31 @@
+en:
+  langtrainer:
+    sign_in: Sign in
+    sign_up: Sign up
+    sign_out: Sign out
+
+    error: Oops... Something went wrong!
+
+    step_view:
+      check_answer: Check answer
+      next_step: Next step
+      show_next_word: Show next word
+      show_right_answer: Show right answer
+      popover:
+        sign_up: Please <a href='/#sign_up'>sign up</a>, if you want to save your progress and effectively optimize your personal learning experience.
+        answer: Answer
+        right_answer: Right answer!
+        wrong_answer: Wrong answer. Let's try again!
+        hotkey:
+          check: Next time press Return (Enter) key to check the answer
+      question:
+        toggle_help: Toggle help
+      answer:
+        placeholder: Enter translation here
+        wrong_hint: It seems there is an error in your answer
+
+    label:
+      native_language: Native language
+      language: Language
+      course: Course
+      unit: Unit
