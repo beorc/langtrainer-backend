@@ -11,7 +11,7 @@ window.Langtrainer.initYandexShare = ->
     options =
       element: 'yashare'
       link: 'http://training.langtrainer.com'
-      l10n: 'en'
+      l10n: Langtrainer.LangtrainerApp.locale()
       elementStyle:
         type: 'button'
         quickServices: ['twitter', 'facebook', 'vkontakte', 'odnoklassniki']
