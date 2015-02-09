@@ -6,6 +6,31 @@ ru:
 
     error: Ой... Что-то пошло не так!
 
+    dialog:
+      sign_in:
+        title: Вход на сайт
+        password: Пароль
+        submit: Войти
+        sign_up: Регистрация
+        not_registered: Еще не зарегистрировались?
+        success: Вы успешно вошли на сайт!
+        close: Закрыть
+      sign_up:
+        title: Регистрация
+        password: Пароль
+        password_confirmation: Подтверждение пароля
+        submit: Зарегистрироваться
+        sign_in: Вход на сайт
+        already_registered: Уже зарегистрированы?
+        success: Регистрация успешно завершена!
+        close: Закрыть
+      feedback:
+        title: Обратная связь
+        message: Сообщение
+        submit: Отправить
+        success: Ваше сообщение успешно отправлено!
+        close: Закрыть
+
     step_view:
       check_answer: Проверить ответ
       next_step: Следующий шаг

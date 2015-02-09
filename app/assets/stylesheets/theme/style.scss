@@ -46,3 +46,9 @@ body a, a:active, a:focus, a:hover {
     color: white;
   }
 }
+
+.form-control:focus {
+  border-color: $themeColor;
+  outline: 0px none;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(129, 153, 77, 0.6);
+}

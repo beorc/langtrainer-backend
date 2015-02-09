@@ -6,6 +6,31 @@ en:
 
     error: Oops... Something went wrong!
 
+    dialog:
+      sign_in:
+        title: Sign in
+        password: Password
+        submit: Sign in
+        sign_up: Sign up
+        not_registered: Not registered?
+        success: Your have been successfully signed in!
+        close: Close
+      sign_up:
+        title: Sign up
+        password: Password
+        password_confirmation: Password confirmation
+        submit: Sign up
+        sign_in: Sign in
+        already_registered: Already registered?
+        success: Your have been successfully signed up!
+        close: Close
+      feedback:
+        title: Feedback
+        message: Message
+        submit: Send
+        success: Your message has been successfully sent!
+        close: Close
+
     step_view:
       check_answer: Check answer
       next_step: Next step
