@@ -107,7 +107,6 @@ GEM
       compass (~> 1.0.0)
       sass-rails (<= 5.0.1)
       sprockets (< 2.13)
-    dalli (2.7.2)
     debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
     erubis (2.7.0)
@@ -264,7 +263,6 @@ DEPENDENCIES
   capybara (>= 2.0.2)
   coffee-rails (~> 4.1.0)
   compass-rails
-  dalli
   figaro
   font-awesome-rails
   jquery-rails
