@@ -35,7 +35,7 @@ body a, a:active, a:focus, a:hover {
 
 .navbar-right {
   float: right;
-  margin: 20px 0 0 0;
+  margin: 23px 0 0 0;
 }
 
 #footer {
@@ -51,4 +51,12 @@ body a, a:active, a:focus, a:hover {
   border-color: $themeColor;
   outline: 0px none;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(129, 153, 77, 0.6);
+}
+
+.tooltip > .tooltip-inner {
+  background-color: $themeColor;
+}
+
+.tooltip.bottom .tooltip-arrow {
+  border-bottom-color: $themeColor;
 }

@@ -12,5 +12,7 @@ Rails.application.routes.draw do
     end
   end
 
+  resource :about, only: :show
+
   root 'trainings#show'
 end

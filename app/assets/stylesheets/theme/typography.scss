@@ -6,12 +6,17 @@ body {
   font-family: "Kelson-Regular", Arial, serif;
 }
 
-#content {
-  h1, h2, h3 {
-    font-family: "Kelson-Bold";
-    font-weight: normal;
-  }
+strong {
+  font-family: "Kelson-Bold";
+  font-weight: normal;
 }
+
+//#content {
+  //h1, h2, h3 {
+    //font-family: "Kelson-Bold";
+    //font-weight: normal;
+  //}
+//}
 
 // Чтобы отображался текст, стилизованный загружаемыми в данный момент шрифтами
 .wf-loading {

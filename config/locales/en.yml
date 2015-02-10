@@ -1,4 +1,4 @@
 en:
   app_name: Langtrainer
-  app_description: Foreign languages trainer utilizing Leitner system
-  home: Home
+  app_description: Foreign languages trainer utilizing spaced repetition technique
+  home: Training

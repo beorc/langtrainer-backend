@@ -39,6 +39,10 @@
   .inner {
     background: asset_url('bg_noise-5.png') left top repeat;
   }
+
+  #main-menu {
+    margin-right: 50px;
+  }
 }
 #highlighted {
   /* 2. Highlighted (below header) wrapper */
@@ -47,13 +51,23 @@
     margin: 0px auto;
     width: 1040px;
   }
+  .page-title {
+    margin: 0;
+  }
 }
 #content {
   /* 3. Content wrapper */
-  margin: 0px auto;
+  margin-right: auto;
+  margin-left: auto;
   width: 1040px;
   > .container {
     width: 1040px;
+  }
+  .block .block-title span {
+    padding-bottom: 10px;
+  }
+  .block {
+    text-align: justify;
   }
 }
 #content-below {
