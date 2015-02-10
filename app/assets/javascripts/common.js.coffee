@@ -37,6 +37,8 @@ window.Langtrainer.initYandexShare = ->
       stepView = null
       navbarControl = null
 
+      stepViewContainer = $('#step-view').first()
+
       success = (world) ->
         courseSelectorContainer = $('.course-selector-container').first()
         if courseSelectorContainer?
@@ -84,7 +86,6 @@ window.Langtrainer.initYandexShare = ->
             .render()
             .$el.detach().appendTo(languageSelectorContainer)
 
-        stepViewContainer = $('#step-view').first()
         if stepViewContainer?
           stepView ?= new Langtrainer.LangtrainerApp.Views.StepView(model: world.get('step'))
           stepView.$el.detach().appendTo(stepViewContainer)
@@ -102,7 +103,10 @@ window.Langtrainer.initYandexShare = ->
       error = ->
         alert(LangtrainerI18n.t('error'))
 
-      Langtrainer.LangtrainerApp.run(data, success, error)
+      if stepViewContainer?
+        Langtrainer.LangtrainerApp.run(data, success, error)
+      else
+        success()
 
       Langtrainer.initYandexMetrika(data.yaMetrikaId, window, 'yandex_metrika_callbacks')
       Langtrainer.initYandexShare()

@@ -2,12 +2,13 @@
   #highlighted
     .container
       .header
-        h2.page-title About method of learning
+        h2.page-title How it works
 
 .row
   .col-xs-8
     .block
-      h3.block-title#spaced-repetition
+      .anchor#spaced-repetition &nbsp;
+      h3.block-title
         span What is spaced repetition?
       p In order to retain any information in our brain we must refresh it periodically. Let’s assume that you hear somewhere the following fact: “The capital of Norway is Oslo”. If you are not using this information in any way, you will most likely forget it after a very short amount of time. If, however, you encounter this information again and again, for example because you might have an interest in Norway or you happen to visit Oslo from time to time, or you learn for an exam on Northern European geography then obviously you will remember this information for much longer time.
       p The more often you have encountered a piece of information the less often you need to refresh it to keep it in your memory. However, even the most familiar information will be forgotten if it is not encountered or refreshed for a very long time. It is for example not uncommon that people who move to another country will over longer periods of time loose their ability to speak their own native language properly.
@@ -15,10 +16,11 @@
 
       p
         strong Spaced repetition is a learning technique that is based on these facts. It means that you review information at gradually increasing intervals.
-      p Spaced repetition is sometimes also called <em>spaced rehearsal</em> or <em>expanding rehearsals</em>. Even more alternative names are <em>graduated intervals</em>, <em>repetition spacing</em>, <em>repetition scheduling</em> or <em>spaced/expanded retrieval</em>.
+      p Spaced repetition is sometimes also called <strong>spaced rehearsal</strong> or <strong>expanding rehearsals</strong>. Even more alternative names are <strong>graduated intervals</strong>, <strong>repetition spacing</strong>, <strong>repetition scheduling</strong> or <strong>spaced/expanded retrieval</strong>.
 
     .block
-      h3.block-title#flash-card
+      .anchor#flash-card &nbsp;
+      h3.block-title
         span What is a flashcard?
       p A flashcard is essentially a note card with a question on one side and the corresponding answer on the other side. You  can learn and repeat pieces of information by reading the question and trying to recall the answer. You can then check if your answer was correct by flipping the card.
       p If you have for example a flashcard saying: “What is the capital of Norway?”
@@ -34,14 +36,18 @@
         li They don’t tear or break.
         li The dog can’t eat them.
 
-    .block#leitner-system
+    .block
+      .anchor#leitner-system &nbsp;
       h3.block-title
-        span The Leitner System
-      p In combination with flashcards spaced repetition creates an way of optimizing your learning. In the 1970s Sebastian Leitner conducted a series of experiments for improving his own learning behavior and subsequently developed the Leitner-System.
+        span What is the Leitner System?
+      p In combination with flashcards spaced repetition creates a way of optimizing your learning. In the 1970s Sebastian Leitner conducted a series of experiments for improving his own learning behavior and subsequently developed the Leitner System.
       p The Leitner System can be viewed as a physical box in which you store your flashcards. The box has several compartments labeled e.g. 1 to 5 (you could choose more compartments as well). You then put each of your flashcards into appropriate  compartments in this box. If your flashcard is still new you will want to put it in the first compartment, where you repeat the flashcards every day. Flashcards, which you know well will be put into the second compartment. Flashcards in the second compartment have to be reviewed every second day. Flashcards, which you know well there will be moved to the third compartment and so on. Each compartment has a different repetition interval. And flashcards, which you know well, get promoted to the next compartment.
       p In case that you could not answer a flashcard correctly you move it back to the first compartment where the cycle starts again.
       p With this system you are able to sort your flashcards into those you know well and those, which are difficult to retain or you don’t know well.
       p Thus you study the flashcards, which you know worse more often.
+
+      .image-container = image_tag 'leitner.jpg'
+
       p Now onto the bigger problem: how often do you have to repeat the flashcards in each compartment?
       p Obviously there are a couple of problems with the Leitner System.
       ul
@@ -52,12 +58,13 @@
         li If you want to use the Leitner System with physical flashcards you also will have another problem: this system can be easily used for a couple of hundred flashcards, however things get rather messy if you have thousands or tens of thousands of flashcards.
       p In order to spend as little time as possible on learning and repetition we have to attribute to each flashcard its own repetition schedule. The Leitner System does not capture this easily since it has only 5 (or maybe some more) rigid compartments available.
 
-    .block#automatic-scheduling
+    .block
+      .anchor#automatic-scheduling &nbsp;
       h3.block-title
         span Automatic spaced repetition scheduling
       p Here is where the computer really shines.
       p <strong>The combination of spaced repetition, flashcards and computers leads to the most optimal way of learning.</strong> The computer manages and calculates for each individual flashcard the optimal repetition interval based on your past performance of that particular flashcard. No more rigid compartments as in the Leitner System, no more guessing about the correct interval timing, no more management overhead. Spaced repetition software (SRS) increases the efficiency of studying with flashcards with sophisticated adaptive spaced repetition algorithms, which track your repetition performance for each flashcard in the database individually.
-      p <strong>Computer based spaced repetition flashcard software therefore drastically reduces the time to learn information</strong> that can be arranged in question/answer pairs.
+      p <strong>Computer-based spaced repetition flashcard software therefore drastically reduces the time to learn information</strong> that can be arranged in question/answer pairs.
       .block
         h3.block-title.sub-title
           |How can we optimize the learning process?
@@ -65,17 +72,18 @@
       ol
         li How much of the information do you still retain?
         li How much time and effort did you spend to reach and maintain your current level of information retention?
-      p Obviously you will want to <strong>retain as much information as possible</strong> (1) <strong>but with a minimum investment of effort and time</strong> (2).
+      p Obviously you will want to <strong>retain as much information as possible, but with a minimum investment of effort and time</strong>.
       p You could review the capital of Norway every minute, or every hour or every day. But what for? If your reviewing does not add to any increase in your level of knowledge, you are simply wasting time and manpower.
       p Optimizing learning means that we want to make as few repetitions as possible to reap the maximum benefit out of it. We want to spend the minimum amount of time to learn any piece of information such that it permanently stays in our memory. All the time you spare not repeating things you already know well you can either enjoy with your family and friends or learn new things to increase your level of knowledge. <strong>Learn more in less time.</strong>
       p We want to repeat frequently enough that we don’t forget any of the information. But we also want to review as infrequently as possible so as not to waste valuable time.
       p We want the repetitions to occur exactly at the sweet spot where we just still know the information before it is forgotten.
       p The task of the spaced repetition algorithm is to determine the optimal repetition spacing interval for a given flashcard.
 
-    .block#how-it-works
+    .block
+      .anchor#how-it-works &nbsp;
       h3.block-title
-        span So how does spaced repetition work from the user’s perspective?
-      p Langtrainer is a flashcard software with an adaptive spaced repetition algorithm. The general learning procedure is as follows:
+        span So how does Langtrainer work from the user’s perspective?
+      p Langtrainer is a flashcard foreign languages learning software with an adaptive spaced repetition algorithm. The general learning procedure is as follows:
       ol
         li Each day, check <a href="http://www.flashcardlearner.com/download">Flashcard Learner</a>: it will present you with a list of flashcards, which have been scheduled for repetition on that day.
         li You then try to recall the correct answer from memory for the flashcards.
@@ -88,8 +96,13 @@
       p
         strong The advantage of spaced repetition software is that it automatically manages and schedules revisions in your learning process. Therefore you can focus on difficult items and don’t waste valuable learning time repeating items, which you know already very well.
   .col-xs-4.sidebar.sidebar-right
-    .inner
+    .anchor &nbsp;
+    .inner.affix
       .block
+        h3.block-title
+          span About
         ul.nav.nav-list.secondary-nav
           li = link_to 'What is spaced repetition?', url_for(anchor: 'spaced-repetition')
           li = link_to 'What is a flashcard?', url_for(anchor: 'flash-card')
+          li = link_to 'What is the Leitner System?', url_for(anchor: 'leitner-system')
+          li = link_to 'How does Langtrainer work?', url_for(anchor: 'how-it-works')

@@ -33,11 +33,6 @@ body a, a:active, a:focus, a:hover {
   margin-top: 5px;
 }
 
-.navbar-right {
-  float: right;
-  margin: 23px 0 0 0;
-}
-
 #footer {
   .copyright {
     margin-right: 40px;
@@ -59,4 +54,16 @@ body a, a:active, a:focus, a:hover {
 
 .tooltip.bottom .tooltip-arrow {
   border-bottom-color: $themeColor;
+}
+
+.anchor {
+  margin-top: -$topBarHeight;
+  padding-bottom: $topBarHeight;
+}
+
+.image-container {
+  margin: 50px auto;
+  img {
+    margin: 0 auto;
+  }
 }
