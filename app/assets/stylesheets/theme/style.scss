@@ -71,3 +71,9 @@ body a, a:active, a:focus, a:hover {
   line-height: 42px;
   margin-right: 15px;
 }
+.block a > i.fa {
+  font-size: 1em;
+}
+.navbar-right {
+  margin-left: 20px;
+}

@@ -34,13 +34,15 @@ class ApplicationController < ActionController::Base
     styx_initialize_with(options)
   end
 
-  private
-
   def localization(locale)
     saved_locale = I18n.locale
     I18n.locale = locale
     result = I18n.t('langtrainer')
     I18n.locale = saved_locale
     result
+  end
+
+  def default_url_options(options = {})
+    { locale: I18n.locale }.merge options
   end
 end
