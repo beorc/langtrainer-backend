@@ -1,6 +1,6 @@
 GIT
-  remote: git://github.com/beorc/langtrainer_frontend_backbone.git
-  revision: f47e9773742bd05d908b3be9e8f369195547a303
+  remote: git://github.com/langtrainer/langtrainer_frontend_backbone.git
+  revision: a873a0d6a4b9e03845c10e53b9b41be4d7b5a6d0
   branch: master
   specs:
     langtrainer_frontend_backbone (0.0.1)
