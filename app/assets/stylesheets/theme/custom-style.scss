@@ -45,7 +45,9 @@
   background: #f2f2f2 asset_url('bg_noise-5.png') left top repeat;
   & > .container {
     margin: 0px auto;
-    width: 1040px;
+    @media screen and (min-width: $break-large) {
+      width: $break-large;
+    }
   }
   .page-title {
     margin: 0;
@@ -55,9 +57,15 @@
   /* 3. Content wrapper */
   margin-right: auto;
   margin-left: auto;
-  width: 1040px;
+  //width: $break-large;
   > .container {
-    width: 1040px;
+    //@media screen and (max-width: $break-small) {
+      //width: 100px;
+      //float: none;
+    //}
+    @media screen and (min-width: $break-large) {
+      width: $break-large;
+    }
   }
   .block .block-title span {
     padding-bottom: 10px;
@@ -75,7 +83,9 @@
   .inner {
     & > .container {
       margin: 0px auto;
-      width: 1040px;
+      @media screen and (min-width: $break-large) {
+        width: $break-large;
+      }
     }
 
     background: asset_url('bg_noise-5.png') left top repeat;
