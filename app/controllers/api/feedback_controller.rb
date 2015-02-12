@@ -3,6 +3,11 @@ class Api::FeedbackController < Api::ApplicationController
     @feedback = Feedback.create(feedback_params)
 
     if @feedback.persisted?
+      begin
+        ManagerMailer.feedback(ENV['MANAGER_EMAILS'], @feedback).deliver!
+      rescue Mandrill::Error => e
+        Rollbar.error(e)
+      end
       render json: {}, status: :created
     else
       render json: { errors: @feedback.errors }, status: :unprocessable_entity

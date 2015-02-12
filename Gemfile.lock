@@ -110,6 +110,7 @@ GEM
     debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
     erubis (2.7.0)
+    excon (0.44.2)
     execjs (2.3.0)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
@@ -137,6 +138,11 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    mandrill-api (1.0.53)
+      excon (>= 0.16.0, < 1.0)
+      json (>= 1.7.7, < 2.0)
+    mandrill_dm (1.1.0)
+      mandrill-api (~> 1.0.51)
     meta-tags (2.0.0)
       actionpack (>= 3.0.0)
     mime-types (2.4.3)
@@ -269,6 +275,8 @@ DEPENDENCIES
   langtrainer_frontend_backbone!
   launchy (>= 2.1.2)
   letter_opener
+  mandrill-api
+  mandrill_dm
   meta-tags
   pg
   puma

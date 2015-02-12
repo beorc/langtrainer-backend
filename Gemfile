@@ -48,6 +48,8 @@ gem 'langtrainer_frontend_backbone', github: 'langtrainer/langtrainer_frontend_b
 group :production do
   gem 'puma'
   gem 'rails_12factor'
+  gem 'mandrill-api'
+  gem 'mandrill_dm'
 end
 
 group :development do
