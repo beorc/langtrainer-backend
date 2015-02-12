@@ -9,6 +9,16 @@ class Api::Users::UsersController < Api::ApplicationController
     end
   end
 
+  def activate
+    if (@user = User.load_from_activation_token(params[:id]))
+      @user.activate!
+      auto_login(@user)
+      render json: { user: @user }, status: :success
+    else
+      render json: {}, status: :unauthorized
+    end
+  end
+
   private
 
   def user_params

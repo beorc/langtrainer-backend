@@ -81,4 +81,12 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.action_mailer.delivery_method = :mandrill
+
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.smtp_settings = { address: 'smtp.mandrillapp.com',
+                                         port: 25,
+                                         domain: 'langtrainer.com',
+                                         authentication: :plain,
+                                         user_name: ENV['MAILER_USER_NAME'],
+                                         password: ENV['MAILER_PASSWORD'] }
 end

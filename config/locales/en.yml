@@ -2,3 +2,9 @@ en:
   app_name: Langtrainer
   app_description: Foreign languages trainer
   home: Training
+
+  user_mailer:
+    activation_needed_email:
+      subject: Welcome to Langtrainer!
+    reset_password_instructions:
+      subject: Reset password instructions

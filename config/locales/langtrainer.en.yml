@@ -24,6 +24,12 @@ en:
         already_registered: Already registered?
         success: Your have been successfully signed up!
         close: Close
+      activate:
+        title: You will receive an email with instructions for how to confirm your email address in a few minutes.
+        did_not_receive: Didn't receive the an email?
+        send_again: Send again
+        success: An email with instructions has been successfully sent.
+        close: Close
       feedback:
         title: Feedback
         message: Message

@@ -2,3 +2,9 @@ ru:
   app_name: Langtrainer
   app_description: Тренажер иностранных языков
   home: Тренировка
+
+  user_mailer:
+    activation_needed_email:
+      subject: Добро пожаловать!
+    reset_password_instructions:
+      subject: Инструкции по смене пароля

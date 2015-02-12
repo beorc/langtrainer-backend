@@ -5,11 +5,22 @@ Rails.application.routes.draw do
     resources :feedback, only: :create
 
     namespace :users do
-      delete 'sign_out' => 'sessions#destroy'
       resource :session, only: :create
       resource :registration, only: :create
-      resource :user, only: :update
+
+      delete 'sign_out' => 'sessions#destroy'
+      put 'update' => 'users#update'
+      post 'activate' => 'users#activate'
+
+      namespace :password_resets do
+        post 'request' => 'password_resets#request'
+        post 'reset' => 'password_resets#reset'
+      end
     end
+  end
+
+  namespace :users do
+    resources :password_resets, only: :edit
   end
 
   resource :about, only: :show

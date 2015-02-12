@@ -32,5 +32,16 @@ module LangtrainerBackend
     config.active_record.raise_in_transactional_callbacks = true
 
     config.i18n.available_locales = [:en, :ru]
+
+    config.x.host = 'training.langtrainer.com'
+    config.x.root_url = "http://#{config.x.host}"
+
+    default_url_options = { host: config.x.host }
+
+    routes.default_url_options = default_url_options
+    config.action_mailer.default_url_options = default_url_options
+    config.action_controller.default_url_options = default_url_options
+
+    ActionMailer::Base.default from: "\"Langtrainer\" <noreply@#{config.x.host}>"
   end
 end
