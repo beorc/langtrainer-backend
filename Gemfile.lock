@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/beorc/mandrill_dm.git
+  revision: 89e8990b385d007b45ff6f8c89f68f0801fd5562
+  branch: master
+  specs:
+    mandrill_dm (1.1.0)
+      mandrill-api (~> 1.0.51)
+
+GIT
   remote: git://github.com/langtrainer/langtrainer_frontend_backbone.git
   revision: 3f7a48a44d5296361a845efdaca8d70681198273
   branch: master
@@ -141,8 +149,6 @@ GEM
     mandrill-api (1.0.53)
       excon (>= 0.16.0, < 1.0)
       json (>= 1.7.7, < 2.0)
-    mandrill_dm (1.1.0)
-      mandrill-api (~> 1.0.51)
     meta-tags (2.0.0)
       actionpack (>= 3.0.0)
     mime-types (2.4.3)
@@ -279,7 +285,7 @@ DEPENDENCIES
   launchy (>= 2.1.2)
   letter_opener
   mandrill-api
-  mandrill_dm
+  mandrill_dm!
   meta-tags
   pg
   puma

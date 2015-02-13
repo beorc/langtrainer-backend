@@ -50,7 +50,7 @@ group :production do
   gem 'puma'
   gem 'rails_12factor'
   gem 'mandrill-api'
-  gem 'mandrill_dm'
+  gem 'mandrill_dm', github: 'beorc/mandrill_dm', branch: 'master'
 end
 
 group :development do
