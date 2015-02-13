@@ -26,9 +26,27 @@ en:
         close: Close
       activate:
         title: You will receive an email with instructions for how to confirm your email address in a few minutes.
-        did_not_receive: Didn't receive the an email?
+        did_not_receive: Didn't receive an email?
         send_again: Send again
         success: An email with instructions has been successfully sent.
+        close: Close
+      password_reset_request:
+        title: Password reset
+        submit: Send an email
+        remember_password: Remember password?
+        sign_in: Sign in
+        success: You will receive an email with instructions on how to reset your password in a few minutes.
+        did_not_receive: Didn't receive an email?
+        send_again: Send again
+        close: Close
+      password_reset:
+        title: Password reset
+        password: Password
+        password_confirmation: Password confirmation
+        submit: Reset password
+        remember_password: Remember password?
+        sign_in: Sign in
+        success: Your password has been changed successfully.
         close: Close
       feedback:
         title: Feedback

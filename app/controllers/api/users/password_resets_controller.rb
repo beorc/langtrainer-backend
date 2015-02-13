@@ -1,7 +1,7 @@
 class Api::Users::PasswordResetsController < Api::ApplicationController
   # request password reset.
   # you get here when the user entered his email in the reset password form and submitted it.
-  def request
+  def create
     @password_reset = User::PasswordReset.new
     @password_reset.email = params[:email]
 

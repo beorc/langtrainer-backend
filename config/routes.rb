@@ -10,16 +10,18 @@ Rails.application.routes.draw do
 
       delete 'sign_out' => 'sessions#destroy'
       put 'update' => 'users#update'
-      post 'activate' => 'users#activate'
 
-      namespace :password_resets do
-        post 'request' => 'password_resets#request'
-        post 'reset' => 'password_resets#reset'
+      resource :activation, only: :update
+      resource :password_reset, only: :create do
+        member do
+          post 'reset' => 'password_resets#reset'
+        end
       end
     end
   end
 
   namespace :users do
+    get 'activate' => 'activations#activate'
     resources :password_resets, only: :edit
   end
 
