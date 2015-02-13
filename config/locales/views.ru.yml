@@ -3,3 +3,8 @@ ru:
     topbar:
       training: Тренировка
       about: Как это работает
+
+  users:
+    password_resets:
+      edit:
+        title: Изменение пароля

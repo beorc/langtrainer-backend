@@ -3,6 +3,9 @@ en:
   app_description: Foreign languages trainer
   home: Training
 
+  flashes:
+    activated_successfully: Your account has been successfully activated. You are now signed in.
+
   user_mailer:
     activation_needed_email:
       subject: Welcome to Langtrainer!

@@ -10,4 +10,12 @@ class User < ActiveRecord::Base
   def as_json(options = {})
     super(except: [:crypted_password, :salt, :created_at, :updated_at])
   end
+
+  def active?
+    activation_state == 'active'
+  end
+
+  def inactive?
+    !active?
+  end
 end

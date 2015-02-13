@@ -3,6 +3,9 @@ ru:
   app_description: Тренажер иностранных языков
   home: Тренировка
 
+  flashes:
+    activated_successfully: Ваш аккаунт был успешно активирован. Вы вошли на сайт.
+
   user_mailer:
     activation_needed_email:
       subject: Добро пожаловать!

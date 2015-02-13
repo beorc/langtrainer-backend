@@ -42,6 +42,6 @@ module LangtrainerBackend
     config.action_mailer.default_url_options = default_url_options
     config.action_controller.default_url_options = default_url_options
 
-    ActionMailer::Base.default from: "\"Langtrainer\" <noreply@#{config.x.host}>"
+    ActionMailer::Base.default from: "\"Langtrainer\" <noreply@langtrainer.com>"
   end
 end

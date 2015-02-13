@@ -3,3 +3,8 @@ en:
     topbar:
       training: Training
       about: How it works
+
+  users:
+    password_resets:
+      edit:
+        title: Password reset

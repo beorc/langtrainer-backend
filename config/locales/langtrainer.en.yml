@@ -15,6 +15,7 @@ en:
         not_registered: Not registered?
         success: Your have been successfully signed in!
         close: Close
+        reset_password_request: Forgot your password?
       sign_up:
         title: Sign up
         password: Password
@@ -25,13 +26,15 @@ en:
         success: Your have been successfully signed up!
         close: Close
       activate:
-        title: You will receive an email with instructions for how to confirm your email address in a few minutes.
+        title: Account activation
+        body: You will receive an email with instructions for how to confirm your email address in a few minutes.
         did_not_receive: Didn't receive an email?
         send_again: Send again
         success: An email with instructions has been successfully sent.
         close: Close
       password_reset_request:
         title: Password reset
+        email_placeholder: Enter your account's e-mail address
         submit: Send an email
         remember_password: Remember password?
         sign_in: Sign in

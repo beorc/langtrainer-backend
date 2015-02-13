@@ -12,7 +12,7 @@ Rails.application.routes.draw do
       put 'update' => 'users#update'
 
       resource :activation, only: :update
-      resource :password_reset, only: :create do
+      resource :password_reset, only: [:create, :update] do
         member do
           post 'reset' => 'password_resets#reset'
         end
