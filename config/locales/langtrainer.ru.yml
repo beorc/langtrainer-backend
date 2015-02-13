@@ -42,6 +42,7 @@ ru:
         did_not_receive: Не получили письмо?
         send_again: Отправить еще раз
         close: Закрыть
+        resent: Письмо с инструкциями по смене пароля было успешно отправлено.
       password_reset:
         title: Смена пароля
         password: Пароль

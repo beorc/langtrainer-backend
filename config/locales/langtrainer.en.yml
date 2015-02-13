@@ -42,6 +42,7 @@ en:
         did_not_receive: Didn't receive an email?
         send_again: Send again
         close: Close
+        resent: An email with instructions on how to reset your password has been successfully sent.
       password_reset:
         title: Password reset
         password: Password

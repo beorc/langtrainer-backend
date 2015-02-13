@@ -21,6 +21,7 @@ gem 'compass-rails'
 gem 'slim-rails'
 gem 'active_link_to'
 gem 'sorcery'
+gem 'rails-i18n'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
