@@ -1,4 +1,4 @@
-@Styx.Initializers.PasswordResets =
-  edit: (token) ->
-    Langtrainer.LangtrainerApp.showPasswordResetDialog(token)
-
+@Styx.Initializers.UsersPasswordResets =
+  edit: (data) ->
+    Langtrainer.LangtrainerApp.globalBus.on 'application:start', ->
+      Langtrainer.LangtrainerApp.showPasswordResetDialog(data.token)

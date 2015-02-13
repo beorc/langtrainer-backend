@@ -17,15 +17,15 @@ class Api::Users::PasswordResetsController < Api::ApplicationController
   def update
     user = User.find(params[:id])
 
-    user.send(:send_reset_password_email!)
+    user.deliver_reset_password_instructions!
 
-    render json: {}, status: :success
+    render json: {}, status: :ok
   end
 
   # This action fires when the user has sent the reset password form.
   def reset
-    token = params[:id]
-    user = User.load_from_reset_password_token(params[:id])
+    token = params[:token]
+    user = User.load_from_reset_password_token(params[:token])
 
     if user.blank?
       render json: {}, status: :unauthorized
@@ -33,10 +33,10 @@ class Api::Users::PasswordResetsController < Api::ApplicationController
     end
 
     # the next line makes the password confirmation validation work
-    user.password_confirmation = params[:user][:password_confirmation]
+    user.password_confirmation = params[:password_confirmation]
     # the next line clears the temporary token and updates the password
-    if user.change_password!(params[:user][:password])
-      render json: { user: user }, status: :success
+    if user.change_password!(params[:password])
+      render json: { user: user }, status: :ok
     else
       render json: { errors: user.errors }, status: :unprocessable_entity
     end
