@@ -22,7 +22,7 @@ class Api::Users::SessionsController < Api::ApplicationController
 
   rescue Error::NotActivated => exception
     @session.user.send(:send_activation_needed_email!)
-    render json: {}, status: :unauthorized
+    render json: { id: @session.user.id }, status: :unauthorized
   end
 
   def destroy

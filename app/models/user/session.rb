@@ -16,8 +16,7 @@ class User::Session
 
   def save
     if valid?
-      context.login(email, password)
-      return true
+      return !!context.login(email, password)
     else
       return false
     end

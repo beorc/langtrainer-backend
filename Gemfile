@@ -36,6 +36,8 @@ gem 'rollbar', '~> 1.3.1'
 gem 'meta-tags', require: 'meta_tags'
 gem 'styx'
 gem 'langtrainer_frontend_backbone', github: 'langtrainer/langtrainer_frontend_backbone', branch: 'master'
+gem 'mandrill-api'
+gem 'mandrill_dm', github: 'beorc/mandrill_dm', branch: 'master'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -49,13 +51,13 @@ gem 'langtrainer_frontend_backbone', github: 'langtrainer/langtrainer_frontend_b
 group :production do
   gem 'puma'
   gem 'rails_12factor'
-  gem 'mandrill-api'
-  gem 'mandrill_dm', github: 'beorc/mandrill_dm', branch: 'master'
+end
+
+group :development, :test do
+  gem 'figaro'
 end
 
 group :development do
-  gem 'figaro'
-
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
@@ -72,4 +74,9 @@ group :test do
   gem 'launchy', '>= 2.1.2'
   gem 'capybara', '>= 2.0.2'
   gem 'sqlite3'
+
+  gem 'rspec-rails'
+  gem 'cranky'
+  gem 'database_cleaner'
+  gem 'poltergeist'
 end

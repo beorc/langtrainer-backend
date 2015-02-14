@@ -8,7 +8,16 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true
 
   def as_json(options = {})
-    super(except: [:crypted_password, :salt, :created_at, :updated_at])
+    super(only: [
+      :id,
+      :email,
+      :activation_state,
+      :token,
+      :current_course_slug,
+      :language_slug,
+      :native_language_slug,
+      :question_help_enabled
+    ])
   end
 
   def active?

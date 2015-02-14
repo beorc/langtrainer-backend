@@ -4,8 +4,8 @@ class Api::FeedbackController < Api::ApplicationController
 
     if @feedback.persisted?
       begin
-        ManagerMailer.feedback(ENV['MANAGER_EMAILS'], @feedback).deliver!
-      rescue Mandrill::Error => e
+        ManagerMailer.feedback(ENV['MANAGER_EMAILS'], @feedback).deliver_now!
+      rescue Exception => e
         Rollbar.error(e)
       end
       render json: {}, status: :created
