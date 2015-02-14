@@ -6,6 +6,7 @@ require 'rspec/rails'
 require 'approvals/rspec'
 require 'cranky'
 require 'factories/factory'
+require 'shoulda/matchers'
 
 require 'capybara/rspec'
 require 'capybara/poltergeist'
