@@ -79,4 +79,5 @@ group :test do
   gem 'cranky'
   gem 'database_cleaner'
   gem 'poltergeist'
+  gem 'approvals', '~> 0.0.16'
 end
