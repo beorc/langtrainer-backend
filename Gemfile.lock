@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: git://github.com/langtrainer/langtrainer_frontend_backbone.git
-  revision: 4ef96009e4d8c1b7e594fe5e442625dde9b03eff
+  revision: ba2a06ee3f7be5e1ea4fe0c607a23603067f613a
   branch: master
   specs:
     langtrainer_frontend_backbone (0.0.1)
