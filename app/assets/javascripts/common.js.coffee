@@ -45,7 +45,7 @@ window.Langtrainer.initYandexShare = ->
           coursesCollection = world.get('coursesCollection')
           courseSelector ?= new Langtrainer.LangtrainerApp.Views.CourseSelector(
             collection: coursesCollection
-            model: world.get('course')
+            model: Langtrainer.LangtrainerApp.currentUser.getCurrentCourse()
           )
           courseSelector
             .render()
@@ -55,8 +55,8 @@ window.Langtrainer.initYandexShare = ->
         if unitSelectorContainer?
           unitsCollection = world.get('unitsCollection')
           unitSelector ?= new Langtrainer.LangtrainerApp.Views.UnitSelector(
-            collection: unitsCollection
-            model: world.get('unit')
+            collection: Langtrainer.LangtrainerApp.currentUser.getCurrentCourse().get('unitsCollection')
+            model: Langtrainer.LangtrainerApp.currentUser.getCurrentCourse().getCurrentUnit()
           )
           unitSelector
             .render()
@@ -65,7 +65,7 @@ window.Langtrainer.initYandexShare = ->
         nativeLanguageSelectorContainer = $('.native-language-selector-container').first()
         if nativeLanguageSelectorContainer?
           nativeLanguagesCollection = world.get('nativeLanguagesCollection')
-          nativeLanguageSelector ?= new Langtrainer.LangtrainerApp.Views.LanguageSelector(
+          nativeLanguageSelector ?= new Langtrainer.LangtrainerApp.Views.NativeLanguageSelector(
             collection: nativeLanguagesCollection
             model: world.get('nativeLanguage')
             label: 'native_language'
@@ -77,7 +77,7 @@ window.Langtrainer.initYandexShare = ->
         languageSelectorContainer = $('.language-selector-container').first()
         if languageSelectorContainer?
           languagesCollection = world.get('languagesCollection')
-          languageSelector ?= new Langtrainer.LangtrainerApp.Views.LanguageSelector(
+          languageSelector ?= new Langtrainer.LangtrainerApp.Views.ForeignLanguageSelector(
             collection: languagesCollection
             model: world.get('language')
             label: 'language'
@@ -87,7 +87,7 @@ window.Langtrainer.initYandexShare = ->
             .$el.detach().appendTo(languageSelectorContainer)
 
         if stepViewContainer?
-          stepView ?= new Langtrainer.LangtrainerApp.Views.StepView(model: world.get('step'))
+          stepView ?= new Langtrainer.LangtrainerApp.Views.StepView(model: Langtrainer.LangtrainerApp.currentUser.getCurrentCourse().getCurrentUnit().getCurrentStep())
           stepView.$el.detach().appendTo(stepViewContainer)
           stepView.render()
 
