@@ -79,6 +79,6 @@ en:
 
     label:
       native_language: Native language
-      language: Language
+      foreign_language: Language
       course: Course
       unit: Unit

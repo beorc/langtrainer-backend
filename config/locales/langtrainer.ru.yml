@@ -79,6 +79,6 @@ ru:
 
     label:
       native_language: Родной язык
-      language: Изучаемый язык
+      foreign_language: Изучаемый язык
       course: Курс
       unit: Раздел

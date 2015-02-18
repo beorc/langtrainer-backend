@@ -62,12 +62,14 @@ window.Langtrainer.initYandexShare = ->
             .render()
             .$el.detach().appendTo(unitSelectorContainer)
 
+        currentNativeLanguage = Langtrainer.LangtrainerApp.currentUser.getCurrentNativeLanguage()
+
         nativeLanguageSelectorContainer = $('.native-language-selector-container').first()
         if nativeLanguageSelectorContainer?
-          nativeLanguagesCollection = world.get('nativeLanguagesCollection')
+          nativeLanguagesCollection = world.get('languagesCollection')
           nativeLanguageSelector ?= new Langtrainer.LangtrainerApp.Views.NativeLanguageSelector(
             collection: nativeLanguagesCollection
-            model: world.get('nativeLanguage')
+            model: currentNativeLanguage
             label: 'native_language'
           )
           nativeLanguageSelector
@@ -76,11 +78,11 @@ window.Langtrainer.initYandexShare = ->
 
         languageSelectorContainer = $('.language-selector-container').first()
         if languageSelectorContainer?
-          languagesCollection = world.get('languagesCollection')
+          languagesCollection = world.getForeignLanguages(currentNativeLanguage.get('slug'))
           languageSelector ?= new Langtrainer.LangtrainerApp.Views.ForeignLanguageSelector(
             collection: languagesCollection
-            model: world.get('language')
-            label: 'language'
+            model: Langtrainer.LangtrainerApp.currentUser.getCurrentForeignLanguage()
+            label: 'foreign_language'
           )
           languageSelector
             .render()
