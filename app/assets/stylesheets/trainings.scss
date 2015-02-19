@@ -91,3 +91,9 @@ span.label {
     word-spacing: normal;
   }
 }
+
+.trainings-controller.action-show {
+  a.disabled {
+    display: none;
+  }
+}

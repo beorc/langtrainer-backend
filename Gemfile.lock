@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: git://github.com/langtrainer/langtrainer_frontend_backbone.git
-  revision: 79c86cc66bff645a87f2eceb36f08dcbb0e7b1ef
+  revision: 7f8ef1f658e6613783c3773d9b4d565802f5dd44
   branch: master
   specs:
     langtrainer_frontend_backbone (0.0.1)
@@ -101,7 +101,7 @@ GEM
     coffee-script (2.3.0)
       coffee-script-source
       execjs
-    coffee-script-source (1.9.0)
+    coffee-script-source (1.9.1)
     columnize (0.9.0)
     compass (1.0.3)
       chunky_png (~> 1.2)
