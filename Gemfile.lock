@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: git://github.com/langtrainer/langtrainer_frontend_backbone.git
-  revision: 7f8ef1f658e6613783c3773d9b4d565802f5dd44
+  revision: 4a21ed950d1a1fceb666b8b7a194220e2da56e5c
   branch: master
   specs:
     langtrainer_frontend_backbone (0.0.1)
@@ -67,7 +67,7 @@ GEM
       nokogiri (~> 1.6)
       thor (~> 0.18)
     arel (6.0.0)
-    autoprefixer-rails (5.1.5)
+    autoprefixer-rails (5.1.6)
       execjs
       json
     bcrypt (3.1.9)
