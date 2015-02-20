@@ -3,16 +3,20 @@
     .navbar-inner
       .inner
         .container
-          .navbar-left
-            .navbar-header
-              = link_to root_path, class: 'navbar-brand', title: t(:home) do
-                h1
-                  = t(:app_name)
-                span = t(:app_description)
-            span.lt-loading-indicator
-              i.fa.fa-cog.fa-spin
-          .navbar-right
-            #lt-nav-control-container
-          ul.nav.main-menu
-            li.training = link_to t('.training'), root_path
-            li.about = link_to t('.about'), about_path
+          .row
+            .col-xs-6
+              .navbar-left
+                .navbar-header
+                  = link_to root_path, class: 'navbar-brand', title: t(:home) do
+                    h1
+                      = t(:app_name)
+                    span = t(:app_description)
+                span.lt-loading-indicator
+                  i.fa.fa-cog.fa-spin
+            .col-xs-3
+              ul.nav.main-menu
+                li.training = link_to t('.training'), root_path
+                li.about = link_to t('.about'), about_path
+            .col-xs-3
+              .navbar-right
+                #lt-nav-control-container
