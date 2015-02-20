@@ -53,6 +53,9 @@ group :production do
   gem 'puma'
   gem 'rails_12factor'
   gem 'dalli'
+  gem "memcachier"
+  gem 'rack-cache'
+  gem 'kgio'
 end
 
 group :development, :test do
