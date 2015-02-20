@@ -159,7 +159,6 @@ GEM
     mandrill-api (1.0.53)
       excon (>= 0.16.0, < 1.0)
       json (>= 1.7.7, < 2.0)
-    memcachier (0.0.2)
     meta-tags (2.0.0)
       actionpack (>= 3.0.0)
     mime-types (2.4.3)
@@ -331,7 +330,6 @@ DEPENDENCIES
   letter_opener
   mandrill-api
   mandrill_dm!
-  memcachier
   meta-tags
   pg
   poltergeist
