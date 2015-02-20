@@ -6,6 +6,16 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   before_action :styx_environment
 
+  def self.cache_page content, path
+    super content, path.to_s + '_' + I18n.locale.to_s
+  end
+
+  def self.expire_page path
+    I18n.available_locales.each do |locale|
+      super path.to_s + '_' + locale.to_s
+    end
+  end
+
   private
 
   def set_locale
