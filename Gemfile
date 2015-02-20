@@ -38,7 +38,6 @@ gem 'styx'
 gem 'langtrainer_frontend_backbone', github: 'langtrainer/langtrainer_frontend_backbone', branch: 'master'
 gem 'mandrill-api'
 gem 'mandrill_dm', github: 'beorc/mandrill_dm', branch: 'master'
-gem 'actionpack-page_caching'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

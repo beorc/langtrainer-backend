@@ -1,114 +1,115 @@
-- content_for :highlighted do
-  #highlighted
-    .container
-      .header
-        h2.page-title How it works
-        .pull-right.native-language-selector-container
+- cache('about_en') do
+  - content_for :highlighted do
+    #highlighted
+      .container
+        .header
+          h2.page-title How it works
+          .pull-right.native-language-selector-container
 
-.row
-  .col-xs-9
-    .block
-      .anchor#spaced-repetition &nbsp;
-      h3.block-title
-        span What is spaced repetition?
-      p Langtrainer is a free spaced repetition web-service designed specifically for effective learning of foreign languages. What is actually spaced repetition?
-      p In order to retain any information in our brain we must refresh it periodically. Let’s assume that you hear somewhere the following fact: “The capital of Norway is Oslo”. If you are not using this information in any way, you will most likely forget it after a very short amount of time. If, however, you encounter this information again and again, for example because you might have an interest in Norway or you happen to visit Oslo from time to time, or you learn for an exam on Northern European geography then obviously you will remember this information for much longer time.
-        strong The advantage of spaced repetition software is that it automatically manages and schedules revisions in your learning process. Therefore you can focus on difficult items and don’t waste valuable learning time repeating items, which you know already very well.
-      p The more often you have encountered a piece of information the less often you need to refresh it to keep it in your memory. However, even the most familiar information will be forgotten if it is not encountered or refreshed for a very long time. It is for example not uncommon that people who move to another country will loose their ability to speak their own native language properly over long period of time.
-      p Most likely, everybody has made a similar experience. When you were using some piece of information actively it was always easy to recall. However, once you stopped using it, since it was not important anymore in your daily life this information quickly faded away until it was completely forgotten.
-
-      p
-        strong Spaced repetition is a learning technique that is based on these facts. It means that you review information at gradually increasing intervals.
-      p Spaced repetition is sometimes also called <strong>spaced rehearsal</strong> or <strong>expanding rehearsals</strong>. Even more alternative names are <strong>graduated intervals</strong>, <strong>repetition spacing</strong>, <strong>repetition scheduling</strong> or <strong>spaced/expanded retrieval</strong>.
-
-    .block
-      .anchor#flash-card &nbsp;
-      h3.block-title
-        span What is a flashcard?
-      p A flashcard is essentially a note card with a question on one side and the corresponding answer on the other side. You can learn and repeat pieces of information by reading the question and trying to recall the answer. You can then check if your answer was correct by flipping the card.
-      p If you have for example a flashcard saying: &laquo;How to say "I love you" in German?&raquo;, you would write &laquo;Ich Liebe dich&raquo; on the back side.
-      p This also works the other way around. You can look at the answer and try to recall the associated question: when you see the “Ich Liebe dich” on your card you can try to remember how to say it in English. Ah, right. &laquo;I love you&raquo;.
-      p In a spaced repetition software a flashcard is simply two text fields which contain information. This approach works perfectly for learning any foreign language. The benefits of using flashcard software over real flashcards are multiple:
-      ul
-        li You can type answer instead of seeing the right one, that engages you to review the right answer to the last detail.
-        li You can use real-time spell checking and see instant error notifications.
-        li You can ask the system to show you next word form the right answer.
-        li The system can show you what particular phrase literally means on your native language or give you translation guidelines.
-        li The system can remember your answers and amount of assistance required answer the questions.
-        li The system can automatically manage and schedule revisions in your learning process.
-        li It is possible to easily add multimedia content such as images, sounds or even movies.
-        li It is possible to easily change the cards without having to rewrite them.
-        li They don’t tear or break.
-        li The dog can’t eat them.
-        li In the case of Langtrainer, it's free.
-
-    .block
-      .anchor#leitner-system &nbsp;
-      h3.block-title
-        span What is the Leitner System?
-      p In combination with flashcards spaced repetition creates a way of optimizing your learning. In the 1970s Sebastian Leitner conducted a series of experiments for improving his own learning behavior and subsequently developed the Leitner System.
-      p The Leitner System can be viewed as a physical box in which you store your flashcards. The box has several compartments labeled e.g. 1 to 5 (you could choose more compartments as well). You then put each of your flashcards into appropriate compartments in this box. If your flashcard is still new you will want to put it in the first compartment, where you repeat the flashcards every day. Flashcards, which you know well will be put into the second compartment. Flashcards in the second compartment have to be reviewed every second day. Flashcards, which you know well there will be moved to the third compartment and so on. Each compartment has a different repetition interval. And flashcards, which you know well, get promoted to the next compartment.
-      p In case that you could not answer a flashcard correctly you move it back to the first compartment where the cycle starts again.
-      p With this system you are able to sort your flashcards into those you know well and those, which are difficult to retain or you don’t know well.
-      p Thus you study the flashcards, which you know worse more often.
-
-      .image-container = image_tag 'leitner.jpg'
-
-      p Now onto the bigger problem: how often do you have to repeat the flashcards in each compartment?
-      p Obviously there are a couple of problems with the Leitner System.
-      ul
-        li What intervals should the compartments have? Should the second compartment be 2 days or maybe 5 days? What about the third, fourth, fifth etc. compartment? You might find a solution, which works for you with a lot of trial and error.
-        li You repeat too much. Let’s assume you put some flashcards from the second compartment to the third one with intervals of 2 and 5 days respectively. Now since you look at the third compartment only every 5 days but can put flashcards from the second to the third at day 1, 3 and 5 the flashcards in the third compartment did not actually have a 5 days interval. Sure, some of them did, but for most of them the interval is smaller than 5 days, so you do a lot of additional repetition, which is a waste of time.
-        li In principle, each flashcard needs to have its own box with compartments. However even this is not enough. The Leitner-System does not take into account your past performance of this card. Each time you answer the cards incorrectly the appropriate optimal spacing intervals for each card must be adjusted as well.
-        li You have to do some management overhead, since you have to keep track which compartment have to be repeated on which day.
-        li If you want to use the Leitner System with physical flashcards you also will have another problem: this system can be easily used for a couple of hundred flashcards, however things get rather messy if you have thousands or tens of thousands of flashcards.
-      p In order to spend as little time as possible on learning and repetition we have to attribute to each flashcard its own repetition schedule. The Leitner System does not capture this easily since it has only 5 (or maybe some more) rigid compartments available.
-
-    .block
-      .anchor#automatic-scheduling &nbsp;
-      h3.block-title
-        span Automatic spaced repetition scheduling
-      p Here is where the computer really shines.
-      p <strong>The combination of spaced repetition, flashcards and computers leads to the most optimal way of learning.</strong> The computer manages and calculates for each individual flashcard the optimal repetition interval based on your past performance of that particular flashcard.
-      p Computer-based spaced repetition flashcard software therefore drastically reduces the time to learn information that can be arranged in question/answer pairs.
-
-    .block
-      .anchor#how-it-works &nbsp;
-      h3.block-title
-        span So how does Langtrainer work from the user’s perspective?
-      p Langtrainer is a flashcard foreign languages learning service with an adaptive spaced repetition algorithm. The general learning procedure is as follows:
-      ol
-        li You specify your native language, the language to learn and then the course and the unit to practice on.
-        li Langtrainer shows you the phrase written on your native language.
-        li You enter the translation of the given phrase into the foreign language using the serice provided assistance if it's needed. You can ask the system to show a next word of the phrase or the whole correct answer. Langtrainer warns you about the incorrect input immediately to save your time.
-        li Langtrainer rates your performance on current flashcard taking into account received assistance (it doesn't take into account automatic real-time warnings about the wrong input). The purpose of the rating process is to determine the difficulty level of this flashcard specifically for you.
-        li Langtrainer then schedules this flashcard to be repeated again at some point in the future based on the rating of your performance and on your previous performance showed for this flashcard.
-        li Steps 2-5 are repeated until all items are passed well from the point of view of the system.
-        li When all flashcards are passed, Langtrainer reschedules all of them for the new round of learning. Thus you can practice on selected unit infinitely.
-        li The flashcards, which were easy for you to answer, will be scheduled further into the future while the ones which you had difficulties with are repeated more frequently until you know them sufficiently well.
-      p Langtrainer involves you in an active reviewing process, since it always expects you to provide an answer. So your brain has to remember correctly the asked piece of information. Passive reviewing, such as simply re-reading material is much less effective.
-      p
-        strong The advantage of spaced repetition software is that it automatically manages and schedules revisions in your learning process. Therefore you can focus on difficult items and don’t waste valuable learning time repeating items, which you know already very well.
-  .col-xs-3.sidebar.sidebar-right
-    .anchor &nbsp;
-    .inner.affix
+  .row
+    .col-xs-9
       .block
+        .anchor#spaced-repetition &nbsp;
         h3.block-title
-          span About
-        ul.nav.nav-list.secondary-nav
-          li
-            = link_to url_for(anchor: 'spaced-repetition') do
-              => fa_icon('chevron-right')
-              |What is spaced repetition?
-          li
-            = link_to url_for(anchor: 'flash-card') do
-              => fa_icon('chevron-right')
-              |What is a flashcard?
-          li
-            = link_to url_for(anchor: 'leitner-system') do
-              => fa_icon('chevron-right')
-              |What is the Leitner System?
-          li
-            = link_to url_for(anchor: 'how-it-works') do
-              => fa_icon('chevron-right')
-              |How does Langtrainer work?
+          span What is spaced repetition?
+        p Langtrainer is a free spaced repetition web-service designed specifically for effective learning of foreign languages. What is actually spaced repetition?
+        p In order to retain any information in our brain we must refresh it periodically. Let’s assume that you hear somewhere the following fact: “The capital of Norway is Oslo”. If you are not using this information in any way, you will most likely forget it after a very short amount of time. If, however, you encounter this information again and again, for example because you might have an interest in Norway or you happen to visit Oslo from time to time, or you learn for an exam on Northern European geography then obviously you will remember this information for much longer time.
+          strong The advantage of spaced repetition software is that it automatically manages and schedules revisions in your learning process. Therefore you can focus on difficult items and don’t waste valuable learning time repeating items, which you know already very well.
+        p The more often you have encountered a piece of information the less often you need to refresh it to keep it in your memory. However, even the most familiar information will be forgotten if it is not encountered or refreshed for a very long time. It is for example not uncommon that people who move to another country will loose their ability to speak their own native language properly over long period of time.
+        p Most likely, everybody has made a similar experience. When you were using some piece of information actively it was always easy to recall. However, once you stopped using it, since it was not important anymore in your daily life this information quickly faded away until it was completely forgotten.
+
+        p
+          strong Spaced repetition is a learning technique that is based on these facts. It means that you review information at gradually increasing intervals.
+        p Spaced repetition is sometimes also called <strong>spaced rehearsal</strong> or <strong>expanding rehearsals</strong>. Even more alternative names are <strong>graduated intervals</strong>, <strong>repetition spacing</strong>, <strong>repetition scheduling</strong> or <strong>spaced/expanded retrieval</strong>.
+
+      .block
+        .anchor#flash-card &nbsp;
+        h3.block-title
+          span What is a flashcard?
+        p A flashcard is essentially a note card with a question on one side and the corresponding answer on the other side. You can learn and repeat pieces of information by reading the question and trying to recall the answer. You can then check if your answer was correct by flipping the card.
+        p If you have for example a flashcard saying: &laquo;How to say "I love you" in German?&raquo;, you would write &laquo;Ich Liebe dich&raquo; on the back side.
+        p This also works the other way around. You can look at the answer and try to recall the associated question: when you see the “Ich Liebe dich” on your card you can try to remember how to say it in English. Ah, right. &laquo;I love you&raquo;.
+        p In a spaced repetition software a flashcard is simply two text fields which contain information. This approach works perfectly for learning any foreign language. The benefits of using flashcard software over real flashcards are multiple:
+        ul
+          li You can type answer instead of seeing the right one, that engages you to review the right answer to the last detail.
+          li You can use real-time spell checking and see instant error notifications.
+          li You can ask the system to show you next word form the right answer.
+          li The system can show you what particular phrase literally means on your native language or give you translation guidelines.
+          li The system can remember your answers and amount of assistance required answer the questions.
+          li The system can automatically manage and schedule revisions in your learning process.
+          li It is possible to easily add multimedia content such as images, sounds or even movies.
+          li It is possible to easily change the cards without having to rewrite them.
+          li They don’t tear or break.
+          li The dog can’t eat them.
+          li In the case of Langtrainer, it's free.
+
+      .block
+        .anchor#leitner-system &nbsp;
+        h3.block-title
+          span What is the Leitner System?
+        p In combination with flashcards spaced repetition creates a way of optimizing your learning. In the 1970s Sebastian Leitner conducted a series of experiments for improving his own learning behavior and subsequently developed the Leitner System.
+        p The Leitner System can be viewed as a physical box in which you store your flashcards. The box has several compartments labeled e.g. 1 to 5 (you could choose more compartments as well). You then put each of your flashcards into appropriate compartments in this box. If your flashcard is still new you will want to put it in the first compartment, where you repeat the flashcards every day. Flashcards, which you know well will be put into the second compartment. Flashcards in the second compartment have to be reviewed every second day. Flashcards, which you know well there will be moved to the third compartment and so on. Each compartment has a different repetition interval. And flashcards, which you know well, get promoted to the next compartment.
+        p In case that you could not answer a flashcard correctly you move it back to the first compartment where the cycle starts again.
+        p With this system you are able to sort your flashcards into those you know well and those, which are difficult to retain or you don’t know well.
+        p Thus you study the flashcards, which you know worse more often.
+
+        .image-container = image_tag 'leitner.jpg'
+
+        p Now onto the bigger problem: how often do you have to repeat the flashcards in each compartment?
+        p Obviously there are a couple of problems with the Leitner System.
+        ul
+          li What intervals should the compartments have? Should the second compartment be 2 days or maybe 5 days? What about the third, fourth, fifth etc. compartment? You might find a solution, which works for you with a lot of trial and error.
+          li You repeat too much. Let’s assume you put some flashcards from the second compartment to the third one with intervals of 2 and 5 days respectively. Now since you look at the third compartment only every 5 days but can put flashcards from the second to the third at day 1, 3 and 5 the flashcards in the third compartment did not actually have a 5 days interval. Sure, some of them did, but for most of them the interval is smaller than 5 days, so you do a lot of additional repetition, which is a waste of time.
+          li In principle, each flashcard needs to have its own box with compartments. However even this is not enough. The Leitner-System does not take into account your past performance of this card. Each time you answer the cards incorrectly the appropriate optimal spacing intervals for each card must be adjusted as well.
+          li You have to do some management overhead, since you have to keep track which compartment have to be repeated on which day.
+          li If you want to use the Leitner System with physical flashcards you also will have another problem: this system can be easily used for a couple of hundred flashcards, however things get rather messy if you have thousands or tens of thousands of flashcards.
+        p In order to spend as little time as possible on learning and repetition we have to attribute to each flashcard its own repetition schedule. The Leitner System does not capture this easily since it has only 5 (or maybe some more) rigid compartments available.
+
+      .block
+        .anchor#automatic-scheduling &nbsp;
+        h3.block-title
+          span Automatic spaced repetition scheduling
+        p Here is where the computer really shines.
+        p <strong>The combination of spaced repetition, flashcards and computers leads to the most optimal way of learning.</strong> The computer manages and calculates for each individual flashcard the optimal repetition interval based on your past performance of that particular flashcard.
+        p Computer-based spaced repetition flashcard software therefore drastically reduces the time to learn information that can be arranged in question/answer pairs.
+
+      .block
+        .anchor#how-it-works &nbsp;
+        h3.block-title
+          span So how does Langtrainer work from the user’s perspective?
+        p Langtrainer is a flashcard foreign languages learning service with an adaptive spaced repetition algorithm. The general learning procedure is as follows:
+        ol
+          li You specify your native language, the language to learn and then the course and the unit to practice on.
+          li Langtrainer shows you the phrase written on your native language.
+          li You enter the translation of the given phrase into the foreign language using the serice provided assistance if it's needed. You can ask the system to show a next word of the phrase or the whole correct answer. Langtrainer warns you about the incorrect input immediately to save your time.
+          li Langtrainer rates your performance on current flashcard taking into account received assistance (it doesn't take into account automatic real-time warnings about the wrong input). The purpose of the rating process is to determine the difficulty level of this flashcard specifically for you.
+          li Langtrainer then schedules this flashcard to be repeated again at some point in the future based on the rating of your performance and on your previous performance showed for this flashcard.
+          li Steps 2-5 are repeated until all items are passed well from the point of view of the system.
+          li When all flashcards are passed, Langtrainer reschedules all of them for the new round of learning. Thus you can practice on selected unit infinitely.
+          li The flashcards, which were easy for you to answer, will be scheduled further into the future while the ones which you had difficulties with are repeated more frequently until you know them sufficiently well.
+        p Langtrainer involves you in an active reviewing process, since it always expects you to provide an answer. So your brain has to remember correctly the asked piece of information. Passive reviewing, such as simply re-reading material is much less effective.
+        p
+          strong The advantage of spaced repetition software is that it automatically manages and schedules revisions in your learning process. Therefore you can focus on difficult items and don’t waste valuable learning time repeating items, which you know already very well.
+    .col-xs-3.sidebar.sidebar-right
+      .anchor &nbsp;
+      .inner.affix
+        .block
+          h3.block-title
+            span About
+          ul.nav.nav-list.secondary-nav
+            li
+              = link_to url_for(anchor: 'spaced-repetition') do
+                => fa_icon('chevron-right')
+                |What is spaced repetition?
+            li
+              = link_to url_for(anchor: 'flash-card') do
+                => fa_icon('chevron-right')
+                |What is a flashcard?
+            li
+              = link_to url_for(anchor: 'leitner-system') do
+                => fa_icon('chevron-right')
+                |What is the Leitner System?
+            li
+              = link_to url_for(anchor: 'how-it-works') do
+                => fa_icon('chevron-right')
+                |How does Langtrainer work?
