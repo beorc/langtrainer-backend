@@ -90,5 +90,5 @@ Rails.application.configure do
                                          user_name: ENV['MAILER_USER_NAME'],
                                          password: ENV['MAILER_PASSWORD'] }
 
-  config.action_controller.page_cache_directory = "#{Rails.root.to_s}/public/deploy"
+  #config.action_controller.page_cache_directory = "#{Rails.root.to_s}/public/deploy"
 end
