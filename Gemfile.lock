@@ -67,7 +67,7 @@ GEM
       nokogiri (~> 1.6)
       thor (~> 0.18)
     arel (6.0.0)
-    autoprefixer-rails (5.1.6)
+    autoprefixer-rails (5.1.7)
       execjs
       json
     bcrypt (3.1.9)
