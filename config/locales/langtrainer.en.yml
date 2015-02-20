@@ -4,7 +4,7 @@ en:
     sign_up: Sign up
     sign_out: Sign out
 
-    error: Oops... Something went wrong!
+    error: Oops... Something went wrong! Please, try to reload the page.
 
     dialog:
       sign_in:

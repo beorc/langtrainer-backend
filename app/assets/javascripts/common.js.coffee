@@ -41,7 +41,7 @@ window.Langtrainer.initYandexShare = ->
 
       success = (world) ->
         courseSelectorContainer = $('.course-selector-container').first()
-        if courseSelectorContainer?
+        if courseSelectorContainer? && courseSelectorContainer.length > 0
           coursesCollection = world.get('coursesCollection')
           courseSelector ?= new Langtrainer.LangtrainerApp.Views.CourseSelector(
             collection: coursesCollection
@@ -52,7 +52,7 @@ window.Langtrainer.initYandexShare = ->
             .$el.detach().appendTo(courseSelectorContainer)
 
         unitSelectorContainer = $('.unit-selector-container').first()
-        if unitSelectorContainer?
+        if unitSelectorContainer? && unitSelectorContainer.length > 0
           unitsCollection = world.get('unitsCollection')
           unitSelector ?= new Langtrainer.LangtrainerApp.Views.UnitSelector(
             collection: Langtrainer.LangtrainerApp.currentUser.getCurrentCourse().get('unitsCollection')
@@ -65,7 +65,7 @@ window.Langtrainer.initYandexShare = ->
         currentNativeLanguage = Langtrainer.LangtrainerApp.currentUser.getCurrentNativeLanguage()
 
         nativeLanguageSelectorContainer = $('.native-language-selector-container').first()
-        if nativeLanguageSelectorContainer?
+        if nativeLanguageSelectorContainer? && nativeLanguageSelectorContainer.length > 0
           nativeLanguagesCollection = world.get('languagesCollection')
           nativeLanguageSelector ?= new Langtrainer.LangtrainerApp.Views.NativeLanguageSelector(
             collection: nativeLanguagesCollection
@@ -77,7 +77,7 @@ window.Langtrainer.initYandexShare = ->
             .$el.detach().appendTo(nativeLanguageSelectorContainer)
 
         languageSelectorContainer = $('.language-selector-container').first()
-        if languageSelectorContainer?
+        if languageSelectorContainer? && languageSelectorContainer.length > 0
           languagesCollection = world.getForeignLanguages(currentNativeLanguage.get('slug'))
           languageSelector ?= new Langtrainer.LangtrainerApp.Views.ForeignLanguageSelector(
             collection: languagesCollection
@@ -88,13 +88,13 @@ window.Langtrainer.initYandexShare = ->
             .render()
             .$el.detach().appendTo(languageSelectorContainer)
 
-        if stepViewContainer?
+        if stepViewContainer? && stepViewContainer.length > 0
           stepView ?= new Langtrainer.LangtrainerApp.Views.StepView(model: Langtrainer.LangtrainerApp.currentUser.getCurrentCourse().getCurrentUnit().getCurrentStep())
           stepView.$el.detach().appendTo(stepViewContainer)
           stepView.render()
 
         navbarControlContainer = $('#lt-nav-control-container').first()
-        if navbarControlContainer?
+        if navbarControlContainer? && navbarControlContainer.length > 0
           navbarControl ?= new Langtrainer.LangtrainerApp.Views.NavbarControl
           navbarControl.$el.detach().appendTo(navbarControlContainer)
           navbarControl.render()
