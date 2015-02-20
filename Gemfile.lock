@@ -148,6 +148,7 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.2)
     jwt (1.2.1)
+    kgio (2.9.3)
     launchy (2.4.3)
       addressable (~> 2.3)
     letter_opener (1.3.0)
@@ -159,6 +160,7 @@ GEM
     mandrill-api (1.0.53)
       excon (>= 0.16.0, < 1.0)
       json (>= 1.7.7, < 2.0)
+    memcachier (0.0.2)
     meta-tags (2.0.0)
       actionpack (>= 3.0.0)
     mime-types (2.4.3)
@@ -187,6 +189,8 @@ GEM
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
     rack (1.6.0)
+    rack-cache (1.2)
+      rack (>= 0.4)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.0)
@@ -325,16 +329,19 @@ DEPENDENCIES
   figaro
   font-awesome-rails
   jquery-rails
+  kgio
   langtrainer_frontend_backbone!
   launchy (>= 2.1.2)
   letter_opener
   mandrill-api
   mandrill_dm!
+  memcachier
   meta-tags
   pg
   poltergeist
   puma
   quiet_assets
+  rack-cache
   rails (= 4.2.0)
   rails-i18n
   rails_12factor
