@@ -1,7 +1,8 @@
 Langtrainer.initializeUsersPasswordResets = (data) ->
-    Langtrainer.LangtrainerApp.globalBus.on 'application:start', ->
-      Langtrainer.LangtrainerApp.showPasswordResetDialog(data.token)
+  Langtrainer.LangtrainerApp.showPasswordResetDialog(data.token)
+  Langtrainer.LangtrainerApp.globalBus.once 'user:passwordChanged', ->
+    Turbolinks.visit '/'
 
 $ ->
-  if $('.password-resets-controller.action-edit').length > 0
+  if $('.users-password-resets-controller.action-edit').length > 0
     Langtrainer.initializeUsersPasswordResets(gon)
