@@ -4,7 +4,7 @@
       .inner
         .container
           .row
-            .col-xs-6
+            .col-xs-4
               .navbar-left
                 .navbar-header
                   = link_to root_path, class: 'navbar-brand', title: t(:home) do
@@ -13,7 +13,7 @@
                     span = t(:app_description)
                 span.lt-loading-indicator
                   i.fa.fa-cog.fa-spin
-            .col-xs-3
+            .col-xs-5
               ul.nav.main-menu
                 li.training = link_to t('.training'), root_path
                 li.about = link_to t('.about'), about_path
