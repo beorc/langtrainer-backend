@@ -50,7 +50,9 @@
       alert(LangtrainerI18n.t('error'))
 
     Langtrainer.LangtrainerApp.runTraining()
-    Langtrainer.LangtrainerApp.world.fetch(success: success, error: error)
+
+    $ ->
+      Langtrainer.LangtrainerApp.world.fetch(success: success, error: error)
 
     $(document).on "page:load", ->
       success(Langtrainer.LangtrainerApp.world)

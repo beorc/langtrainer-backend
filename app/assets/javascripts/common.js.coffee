@@ -41,7 +41,8 @@ window.Langtrainer.initYandexShare = ->
     Langtrainer.LangtrainerApp.runGlobal(data)
 
     Langtrainer.initYandexMetrika(data.yaMetrikaId, window, 'yandex_metrika_callbacks')
-    $ ->
+
+    initControls = ->
       currentNativeLanguage = Langtrainer.LangtrainerApp.currentUser.getCurrentNativeLanguage()
 
       nativeLanguageSelectorContainer = $('.native-language-selector-container').first()
@@ -64,3 +65,7 @@ window.Langtrainer.initYandexShare = ->
 
       Langtrainer.initView()
       Langtrainer.initYandexShare()
+
+    $ initControls
+
+    $(document).on "page:load", initControls

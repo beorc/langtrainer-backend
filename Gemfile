@@ -51,10 +51,11 @@ gem 'mandrill_dm', github: 'beorc/mandrill_dm', branch: 'master'
 group :production do
   gem 'puma'
   gem 'rails_12factor'
-  #gem 'dalli'
-  #gem "memcachier"
-  #gem 'rack-cache'
-  #gem 'kgio'
+  gem 'dalli'
+  gem "memcachier"
+  gem 'rack-cache'
+  gem 'kgio'
+  gem 'connection_pool'
 end
 
 group :development, :test do
