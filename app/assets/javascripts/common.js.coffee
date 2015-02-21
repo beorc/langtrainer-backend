@@ -27,45 +27,47 @@ window.Langtrainer.initYandexShare = ->
 
     new Ya.share options
 
-@Styx.Initializers.Common =
-  initialize: (data)->
-    nativeLanguageSelector = null
-    navbarControl = null
+Langtrainer.initializeCommon = (data)->
+  nativeLanguageSelector = null
+  navbarControl = null
 
-    Langtrainer.LangtrainerApp.globalBus.on 'localeChanged', (slug) ->
-      Turbolinks.visit window.location.pathname + "?locale=#{slug}"
+  Langtrainer.LangtrainerApp.globalBus.on 'localeChanged', (slug) ->
+    Turbolinks.visit window.location.pathname + "?locale=#{slug}"
 
-    $(document).on("page:fetch", -> $('.lt-loading-indicator').show())
-    $(document).on("page:receive", -> $('.lt-loading-indicator').hide())
+  $(document).on "page:fetch", -> $('html').addClass('turbolinks-loading')
+  $(document).on "page:receive", -> $('html').removeClass('turbolinks-loading')
 
-    Langtrainer.LangtrainerApp.runGlobal(data)
+  Langtrainer.LangtrainerApp.runGlobal(data)
 
-    Langtrainer.initYandexMetrika(data.yaMetrikaId, window, 'yandex_metrika_callbacks')
+  Langtrainer.initYandexMetrika(data.yaMetrikaId, window, 'yandex_metrika_callbacks')
 
-    initControls = ->
-      currentNativeLanguage = Langtrainer.LangtrainerApp.currentUser.getCurrentNativeLanguage()
+  initControls = ->
+    currentNativeLanguage = Langtrainer.LangtrainerApp.currentUser.getCurrentNativeLanguage()
 
-      nativeLanguageSelectorContainer = $('.native-language-selector-container').first()
-      if nativeLanguageSelectorContainer? && nativeLanguageSelectorContainer.length > 0
-        nativeLanguagesCollection = Langtrainer.LangtrainerApp.world.get('languagesCollection')
-        nativeLanguageSelector ?= new Langtrainer.LangtrainerApp.Views.NativeLanguageSelector(
-          collection: nativeLanguagesCollection
-          model: currentNativeLanguage
-          label: 'native_language'
-        )
-        nativeLanguageSelector
-          .render()
-          .$el.detach().appendTo(nativeLanguageSelectorContainer)
+    nativeLanguageSelectorContainer = $('.native-language-selector-container').first()
+    if nativeLanguageSelectorContainer? && nativeLanguageSelectorContainer.length > 0
+      nativeLanguagesCollection = Langtrainer.LangtrainerApp.world.get('languagesCollection')
+      nativeLanguageSelector ?= new Langtrainer.LangtrainerApp.Views.NativeLanguageSelector(
+        collection: nativeLanguagesCollection
+        model: currentNativeLanguage
+        label: 'native_language'
+      )
+      nativeLanguageSelector
+        .render()
+        .$el.detach().appendTo(nativeLanguageSelectorContainer)
 
-      navbarControlContainer = $('#lt-nav-control-container').first()
-      if navbarControlContainer? && navbarControlContainer.length > 0
-        navbarControl ?= new Langtrainer.LangtrainerApp.Views.NavbarControl
-        navbarControl.$el.detach().appendTo(navbarControlContainer)
-        navbarControl.render()
+    navbarControlContainer = $('#lt-nav-control-container').first()
+    if navbarControlContainer? && navbarControlContainer.length > 0
+      navbarControl ?= new Langtrainer.LangtrainerApp.Views.NavbarControl
+      navbarControl.$el.detach().appendTo(navbarControlContainer)
+      navbarControl.render()
 
-      Langtrainer.initView()
-      Langtrainer.initYandexShare()
+    Langtrainer.initView()
+    Langtrainer.initYandexShare()
 
-    $ initControls
+  initControls()
 
-    $(document).on "page:load", initControls
+  $(document).on "page:load", initControls
+
+$ ->
+  Langtrainer.initializeCommon(gon.common)

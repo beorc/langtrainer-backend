@@ -4,19 +4,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :set_locale
-  before_action :styx_environment
+  before_action :gon_environment
 
   private
 
-  def set_locale
-    I18n.locale = params[:locale] || current_user.try(:native_language_slug) || cookies[:native_language_slug] || extract_locale_from_accept_language_header || I18n.default_locale
-  end
-
-  def extract_locale_from_accept_language_header
-    request.env['HTTP_ACCEPT_LANGUAGE'].try(:scan, /^[a-z]{2}/).try(:first)
-  end
-
-  def styx_environment
+  def gon_environment
     options = {
       apiEndpoint: ENV['LANGTRAINER_API_ENDPOINT'],
       authApiEndpoint: ENV['AUTH_API_ENDPOINT'],
@@ -31,7 +23,15 @@ class ApplicationController < ActionController::Base
       options[:locales][locale] = localization(locale)
     end
 
-    styx_initialize_with(options)
+    gon.common = options
+  end
+
+  def set_locale
+    I18n.locale = params[:locale] || current_user.try(:native_language_slug) || cookies[:native_language_slug] || extract_locale_from_accept_language_header || I18n.default_locale
+  end
+
+  def extract_locale_from_accept_language_header
+    request.env['HTTP_ACCEPT_LANGUAGE'].try(:scan, /^[a-z]{2}/).try(:first)
   end
 
   def localization(locale)

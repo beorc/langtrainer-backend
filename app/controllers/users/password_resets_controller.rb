@@ -6,7 +6,7 @@ class Users::PasswordResetsController < ApplicationController
     if user.blank?
       not_authenticated
     else
-      styx_initialize_with(token: token)
+      gon.token = token
     end
   end
 end

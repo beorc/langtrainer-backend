@@ -8,8 +8,8 @@
     font-size: 3em;
   }
 
-  .backbone-loading & {
-    display: inline-block;
+  .backbone-loading &, .turbolinks-loading & {
+    display: inline;
   }
 }
 

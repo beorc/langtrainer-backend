@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require styx
 //= require langtrainer_frontend_backbone
 //= require_tree .
 //

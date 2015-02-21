@@ -34,7 +34,7 @@ gem 'turbolinks'
 
 gem 'rollbar', '~> 1.3.1'
 gem 'meta-tags', require: 'meta_tags'
-gem 'styx'
+gem 'gon'
 gem 'langtrainer_frontend_backbone', github: 'langtrainer/langtrainer_frontend_backbone', branch: 'master'
 gem 'mandrill-api'
 gem 'mandrill_dm', github: 'beorc/mandrill_dm', branch: 'master'
