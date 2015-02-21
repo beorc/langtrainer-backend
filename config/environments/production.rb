@@ -71,7 +71,7 @@ Rails.application.configure do
   }
   config.static_cache_control = "public, max-age=2592000"
 
-  config.cache_store = client
+  config.cache_store = :dalli_store
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = 'http://assets.example.com'
