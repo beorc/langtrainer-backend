@@ -46,6 +46,8 @@ Langtrainer.initializeTrainings = (data) ->
       stepView.$el.detach().appendTo(stepViewContainer)
       stepView.render()
 
+    Langtrainer.initView()
+
   error = ->
     alert(LangtrainerI18n.t('error'))
 
