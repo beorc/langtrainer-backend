@@ -52,8 +52,11 @@ Langtrainer.initializeTrainings = (data) ->
   if Langtrainer.LangtrainerApp.world.has('token')
     success(Langtrainer.LangtrainerApp.world)
   else
+    Langtrainer.LangtrainerApp.trainingBus.on 'step:rendered', (model) ->
+      $('.lt-question span.with-translation').each ->
+        $(@).tooltip(placement: 'bottom')
+
     Langtrainer.LangtrainerApp.runTraining()
     Langtrainer.LangtrainerApp.world.fetch(success: success, error: error)
 
-$(document).on "page:load", -> Langtrainer.initializeTrainings(gon.common)
-$ -> Langtrainer.initializeTrainings(gon.common)
+$(document).on "ready page:load", -> Langtrainer.initializeTrainings(gon.common)
