@@ -31,7 +31,8 @@ class ApplicationController < ActionController::Base
   end
 
   def extract_locale_from_accept_language_header
-    request.env['HTTP_ACCEPT_LANGUAGE'].try(:scan, /^[a-z]{2}/).try(:first)
+    locale = request.env['HTTP_ACCEPT_LANGUAGE'].try(:scan, /^[a-z]{2}/).try(:first).try(:to_sym)
+    I18n.available_locales.find { |l| l == locale }
   end
 
   def localization(locale)
