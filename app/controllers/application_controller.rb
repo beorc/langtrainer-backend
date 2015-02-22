@@ -17,6 +17,7 @@ class ApplicationController < ActionController::Base
 
     options[:currentUser] = logged_in? ? current_user.as_json : {}
     options[:currentUser][:native_language_slug] ||= I18n.locale
+    options[:availableLocales] = I18n.available_locales
     options[:locales] = {}
 
     I18n.available_locales.each do |locale|
