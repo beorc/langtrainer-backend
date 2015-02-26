@@ -1,6 +1,16 @@
-@include font-face("Kelson-Regular", font-files("Kelson/Kelson-Sans-Regular.otf"));
-@include font-face("Kelson-Bold", font-files("Kelson/Kelson-Sans-Bold.otf"));
-//@include font-face("Kelson-Light", font-files("Kelson/Kelson-Sans-Light.otf");
+@font-face {
+  font-family: "Kelson-Regular";
+  src:url("Kelson/Kelson-Sans-Regular.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Kelson-Bold";
+  src:url("Kelson/Kelson-Sans-Bold.otf");
+  font-weight: normal;
+  font-style: normal;
+}
 
 body {
   font-family: "Kelson-Regular", Arial, serif;
