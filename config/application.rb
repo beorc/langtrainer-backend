@@ -45,6 +45,7 @@ module LangtrainerBackend
     ActionMailer::Base.default from: "\"Langtrainer\" <noreply@langtrainer.com>"
 
     config.action_dispatch.default_headers = {
+      'Access-Control-Allow-Headers' => 'X-Requested-With',
       'Access-Control-Allow-Origin' => '*',
       'Access-Control-Request-Method' => '*'
     }
