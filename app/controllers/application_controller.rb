@@ -5,7 +5,6 @@ class ApplicationController < ActionController::Base
 
   before_action :set_locale
   before_action :gon_environment
-  after_action  :allow_cross_domain_access
 
   private
 
@@ -47,10 +46,5 @@ class ApplicationController < ActionController::Base
 
   def default_url_options(options = {})
     { locale: I18n.locale }.merge options
-  end
-
-  def allow_cross_domain_access
-    response.headers["Access-Control-Allow-Origin"] = "*"
-    response.headers["Access-Control-Allow-Methods"] = "*"
   end
 end
