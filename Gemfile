@@ -56,6 +56,8 @@ group :production do
   gem 'rack-cache'
   gem 'kgio'
   gem 'connection_pool'
+  gem "fog", "~>1.20", require: "fog/aws/storage"
+  gem "asset_sync"
 end
 
 group :development, :test do
