@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: git://github.com/langtrainer/langtrainer_frontend_backbone.git
-  revision: 0380884cebbabe7d233327c6b107d2d0554c534b
+  revision: c81ad98c1f78bcb180624579eca7252e0e918235
   branch: master
   specs:
     langtrainer_frontend_backbone (0.0.1)
@@ -346,7 +346,7 @@ GEM
       rspec-mocks (~> 3.2.0)
       rspec-support (~> 3.2.0)
     rspec-support (3.2.1)
-    sass (3.4.12)
+    sass (3.4.13)
     sass-rails (5.0.1)
       railties (>= 4.0.0, < 5.0)
       sass (~> 3.1)
