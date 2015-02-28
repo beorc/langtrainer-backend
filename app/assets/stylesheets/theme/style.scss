@@ -70,6 +70,9 @@ body a, a:active, a:focus, a:hover {
 .navbar .user-email {
   line-height: 42px;
   margin-right: 15px;
+  display: inline-block;
+  max-width: 114px;
+  overflow: hidden;
 }
 .block a > i.fa {
   font-size: 1em;
