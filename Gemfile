@@ -58,6 +58,7 @@ group :production do
   gem 'connection_pool'
   gem "fog", "~>1.20", require: "fog/aws/storage"
   gem "asset_sync"
+  gem 'newrelic_rpm'
 end
 
 group :development, :test do
