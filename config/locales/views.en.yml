@@ -8,3 +8,7 @@ en:
     password_resets:
       edit:
         title: Password reset
+
+  trainings:
+    show:
+      please_wait: Please, wait...

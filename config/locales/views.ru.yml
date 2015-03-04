@@ -8,3 +8,7 @@ ru:
     password_resets:
       edit:
         title: Изменение пароля
+
+  trainings:
+    show:
+      please_wait: Подождите, пожалуйста...

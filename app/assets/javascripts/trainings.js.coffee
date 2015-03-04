@@ -43,7 +43,7 @@ Langtrainer.initializeTrainings = (data) ->
     stepViewContainer = $('#step-view').first()
     if stepViewContainer? && stepViewContainer.length > 0
       stepView ?= new Langtrainer.LangtrainerApp.Views.StepView(model: Langtrainer.LangtrainerApp.currentUser.getCurrentCourse().getCurrentUnit().getCurrentStep())
-      stepView.$el.detach().appendTo(stepViewContainer)
+      stepView.$el.detach().appendTo(stepViewContainer.empty())
       stepView.render()
 
     Langtrainer.initView()
