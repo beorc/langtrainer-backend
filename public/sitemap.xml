@@ -5,6 +5,10 @@
       <priority>1.0</priority>
    </url>
    <url>
+      <loc>http://training.langtrainer.com/about?locale=en</loc>
+      <priority>1.0</priority>
+   </url>
+   <url>
       <loc>http://training.langtrainer.com</loc>
       <priority>0.0</priority>
    </url>
