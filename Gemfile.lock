@@ -8,7 +8,7 @@ GIT
 
 GIT
   remote: git://github.com/langtrainer/langtrainer_frontend_backbone.git
-  revision: 12ec4b6c4cc05c35e2224fe889f8d1e41b26c406
+  revision: e9f7043b83bb1e1640b36d79a6e37ee793193aae
   branch: master
   specs:
     langtrainer_frontend_backbone (0.0.1)
@@ -133,7 +133,7 @@ GEM
     diff-lcs (1.2.5)
     erubis (2.7.0)
     excon (0.44.3)
-    execjs (2.3.0)
+    execjs (2.4.0)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.6)
