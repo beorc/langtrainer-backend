@@ -3,6 +3,8 @@ ru:
     topbar:
       training: Тренировка
       about: Как это работает
+    footer:
+      copyright_message: Проект Юрия Котова
 
   users:
     password_resets:

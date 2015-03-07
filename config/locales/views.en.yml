@@ -3,6 +3,8 @@ en:
     topbar:
       training: Training
       about: How it works
+    footer:
+      copyright_message: A project by Yury Kotov
 
   users:
     password_resets:
