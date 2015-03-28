@@ -4,6 +4,11 @@ class Api::ApplicationController < ApplicationController
   protect_from_forgery with: :exception, except: :handle_options_request
   after_action :set_access_control_headers
 
+  rescue_from ActionController::InvalidAuthenticityToken do |exception|
+    cookies['X-CSRF-Token'] = form_authenticity_token
+    render(json: 'invalid token', status: :unprocessable_entity)
+  end
+
   def handle_options_request
     head(:no_content) if request.request_method == 'OPTIONS'
   end
@@ -21,7 +26,7 @@ class Api::ApplicationController < ApplicationController
 
   def set_csrf_headers
     # Add the newly created csrf token to the page headers
-    response.headers['X-CSRF-Token'] = "#{form_authenticity_token}"
-    response.headers['X-CSRF-Param'] = "#{request_forgery_protection_token}"
+    response.headers['X-CSRF-Token'] = form_authenticity_token
+    response.headers['X-CSRF-Param'] = request_forgery_protection_token
   end
 end
