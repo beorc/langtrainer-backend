@@ -1,4 +1,4 @@
-ruby '2.2.1'
+ruby '2.3.1'
 source 'https://rubygems.org'
 
 
@@ -32,12 +32,11 @@ gem 'turbolinks'
 # bundle exec rake doc:rails generates the API under doc/api.
 #gem 'sdoc', '~> 0.4.0', group: :doc
 
-gem 'rollbar', '~> 1.3.1'
+gem 'rollbar'
 gem 'meta-tags', require: 'meta_tags'
 gem 'gon'
-gem 'langtrainer_frontend_backbone', github: 'langtrainer/langtrainer_frontend_backbone', branch: 'master'
-gem 'mandrill-api'
-gem 'mandrill_dm', github: 'beorc/mandrill_dm', branch: 'master'
+gem 'langtrainer_frontend_backbone', github: 'langtrainer/langtrainer_frontend_backbone'
+gem 'sendgrid'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -56,8 +55,6 @@ group :production do
   gem 'rack-cache'
   gem 'kgio'
   gem 'connection_pool'
-  gem "fog", "~>1.20", require: "fog/aws/storage"
-  gem "asset_sync"
   gem 'newrelic_rpm'
 end
 
@@ -80,7 +77,6 @@ end
 
 group :test do
   gem 'launchy', '>= 2.1.2'
-  gem 'capybara', '>= 2.0.2'
   gem 'sqlite3'
 
   gem 'rspec-rails'

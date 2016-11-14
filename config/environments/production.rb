@@ -74,7 +74,7 @@ Rails.application.configure do
   config.cache_store = :dalli_store
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
-  config.action_controller.asset_host = ENV['ASSET_HOST']
+  # config.action_controller.asset_host = ENV['ASSET_HOST']
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
@@ -93,13 +93,13 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.action_mailer.delivery_method = :mandrill
+  config.action_mailer.delivery_method = :smtp
 
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.smtp_settings = { address: 'smtp.mandrillapp.com',
+  config.action_mailer.smtp_settings = { address: 'smtp.sendgrid.net',
                                          port: 25,
                                          domain: 'langtrainer.com',
                                          authentication: :plain,
-                                         user_name: ENV['MAILER_USER_NAME'],
-                                         password: ENV['MAILER_PASSWORD'] }
+                                         user_name: ENV['SENDGRID_USERNAME'],
+                                         password: ENV['SENDGRID_PASSWORD'] }
 end
